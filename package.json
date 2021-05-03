@@ -1,0 +1,26 @@
+{
+  "name": "team-uno-ewe-community-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Uno-Array-Community-Project/Team-Uno-Ewe-Community-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Uno-Array-Community-Project/Team-Uno-Ewe-Community-Project/issues"
+  },
+  "homepage": "https://github.com/Team-Uno-Array-Community-Project/Team-Uno-Ewe-Community-Project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-redux": "^7.2.4"
+  }
+}
