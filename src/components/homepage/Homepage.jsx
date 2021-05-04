@@ -2,7 +2,6 @@ import React from "react";
 import { Jumbotron } from "react-bootstrap";
 import HomepageCards from "./HomepageCards";
 import HomepageData from "../homepage/HomepageData";
-import "./Homepage.css";
 
 
 const Homepage = () => {

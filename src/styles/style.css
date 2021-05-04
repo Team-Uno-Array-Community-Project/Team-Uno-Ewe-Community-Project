@@ -56,9 +56,9 @@
 }
 
 .nav-links {
-  margin-left: 32%;
   font-family: Lato;
   font-size: 20px;
+  margin: auto;
 }
 
 .contact-container {
@@ -85,6 +85,32 @@
   width: 600px;
   margin: auto;
   margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.homepage-jumbotron {
+  position: relative;
+  background-image: url(/src/assets/HomepageHeroImage.jpg);
+  background-size: cover;
+  height: 550px;
+}
+
+.homepage-card-title {
+  font-family: Baskerville;
+  color: #5c5c5c;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+.homepage-card-group {
+  margin: auto;
+  width: 70%;
+}
+
+.view-all-button {
+  margin-top: 2%;
+  margin-left: 47%;
   margin-bottom: 5%;
 }
 

@@ -8,8 +8,10 @@ import Footer from "./components/Footer";
 
 import HomePage from "./components/homepage/Homepage";
 import Navigation from "./components/HeaderNav";
-import ContactPage from "./components/Contact";
+import ContactPage from "./components/contactpage/Contact";
 import ErrorPage from "./components/Error";
+
+import HomepageData from "./components/homepage/HomepageData";
 
 
 function App() {
@@ -20,7 +22,8 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route path="/" component={HomePage} exact />
+          <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props}/>}
+          />
           <Route path="/contact" component={ContactPage} />
           <Route component={ErrorPage} />
         </Switch>

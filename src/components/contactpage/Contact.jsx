@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Container, Form, Col, Row } from "react-bootstrap";
-import Contact_Hero from "../images/Contact_Hero.jpg";
+import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
 import ContactModal from "./ContactModal";
 
