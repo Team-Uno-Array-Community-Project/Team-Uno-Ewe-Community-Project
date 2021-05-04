@@ -1,0 +1,6 @@
+.homepage-jumbotron {
+    position: relative;
+    background-image: url(/src/assets/HomepageHeroImage.jpg);
+    background-size: cover;
+    height: 550px;
+}

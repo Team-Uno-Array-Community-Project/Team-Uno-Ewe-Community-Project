@@ -5,10 +5,12 @@ import "./styles/style.css";
 
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+
+import HomePage from "./components/homepage/Homepage";
 import Navigation from "./components/HeaderNav";
 import ContactPage from "./components/Contact";
 import ErrorPage from "./components/Error";
-// import HomePage from "./components/Homepage";
+
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
       </header>
       <main>
         <Switch>
-          {/* <Route path="/" component={HomePage} exact /> */}
+          <Route path="/" component={HomePage} exact />
           <Route path="/contact" component={ContactPage} />
           <Route component={ErrorPage} />
         </Switch>
