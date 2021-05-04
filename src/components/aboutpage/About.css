@@ -1,0 +1,54 @@
+.about-page-jumbotron {
+  position: relative;
+  background-image: url(/src/assets/AboutpageHeroImage.png);
+  background-size: cover;
+  height: 550px;
+}
+
+.about-title {
+  font-family: Baskerville;
+  color: rgb(92, 92, 92);
+  text-align: center;
+  margin-top: 5%;
+}
+
+.sheep-image {
+  height: 350px;
+  width: 350px;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.sheep-text-container {
+  margin-top: -24%;
+  margin-left: 37%;
+  width: 700px;
+}
+
+.sheep-text {
+  font-family: Lato;
+  font-size: .9em;
+  color: rgb(92, 92, 92);
+}
+
+.christmas-image {
+  height: 350px;
+  width: 350px;
+  margin-left: 66.5%;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+
+.christmas-text-container {
+  margin-top: -40%;
+  margin-left: 5%;
+  width: 700px;
+  margin-bottom: 20%;
+}
+
+.christmas-text {
+  font-family: Lato;
+  font-size: .9em;
+  color: rgb(92, 92, 92);
+}
