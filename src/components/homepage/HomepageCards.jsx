@@ -15,7 +15,7 @@ const HomepageCards = (props) => {
                   <Card.Text></Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                  <small className="text-muted">Data to be plugged in then use val.blah like code above</small>
+                  <small className="text-muted">Data must be plugged in then use val.blah like code above</small>
                 </Card.Footer>
               </Card>
             </CardGroup>
