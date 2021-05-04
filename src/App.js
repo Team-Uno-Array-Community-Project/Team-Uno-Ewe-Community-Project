@@ -1,11 +1,13 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/style.css";
 
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import Navigation from "./components/Navbar";
+import Navigation from "./components/HeaderNav";
+import ContactPage from "./components/Contact";
+import ErrorPage from "./components/Error";
 // import HomePage from "./components/Homepage";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <main>
         <Switch>
           {/* <Route path="/" component={HomePage} exact /> */}
+          <Route path="/contact" component={ContactPage} />
+          <Route component={ErrorPage} />
         </Switch>
       </main>
       <Footer />
