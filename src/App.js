@@ -10,6 +10,7 @@ import HomePage from "./components/homepage/Homepage";
 import Navigation from "./components/HeaderNav";
 import ContactPage from "./components/Contact";
 import ErrorPage from "./components/Error";
+import AboutPage from "./components/aboutpage/About";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/about" component={AboutPage} />
           <Route component={ErrorPage} />
         </Switch>
       </main>
