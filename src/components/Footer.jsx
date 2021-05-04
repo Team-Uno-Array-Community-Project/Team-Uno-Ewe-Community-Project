@@ -10,6 +10,7 @@ const Footer = (props) => {
   //start of the section that renders on the bottom of each page
   return (
     <Navbar
+      activeKey={location.pathname}
       className="NavBarBottom"
       bg="light"
       variant="light"
@@ -20,40 +21,20 @@ const Footer = (props) => {
           {/* first colom */}
           <Col className="footer-nav-margin">
             <div className="footer-nav-text">
-              <h5>batchat incorporated</h5>
-              <p>phone: shine a bat in the sky</p>
-              <p>probably wayne tower</p>
-              <p>gotham city</p>
+              <Nav.Link href="#fabric">Fabric</Nav.Link>
+              <Nav.Link href="#yarn">Yarn</Nav.Link>
+              <Nav.Link href="#patterns">Patterns</Nav.Link>
+              <Nav.Link href="#tools">Tools</Nav.Link>
             </div>
           </Col>
           {/* second colom */}
 
           <Col>
-            <Nav
-              activeKey={location.pathname}
-              className="flex-column footer-nav footer-nav-text footer-nav-margin batman-font"
-            >
-              {/* links that navigate to the respective pages in sync with the header Navbar  */}
-              <Nav.Link className="NavbarHover" href="/">
-                home
-              </Nav.Link>
-              <Nav.Link className="NavbarHover" href="/museum/1">
-                museum
-              </Nav.Link>
-
-              <Nav.Link className="NavbarHover" href="/batchat">
-                batchat
-              </Nav.Link>
-              <Nav.Link className="NavbarHover" href="/aboutus/1">
-                about
-              </Nav.Link>
-              <Nav.Link className="NavbarHover" href="/contactus">
-                contact
-              </Nav.Link>
-            </Nav>
+            <Nav.Link href="#blog">Blog</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
           </Col>
         </Row>
-        {/* <BackToTop /> */}
       </Container>
     </Navbar>
   );
