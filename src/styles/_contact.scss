@@ -1,0 +1,21 @@
+.contact-container {
+  max-width: 1920px;
+  min-width: fit-content;
+  min-height: calc(100vh - 145px - 3rem);
+  height: fit-content;
+  justify-self: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.knitting-image {
+  margin: auto;
+}
+
+.contact-form-container {
+  font-family: Baskerville;
+  width: 600px;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
