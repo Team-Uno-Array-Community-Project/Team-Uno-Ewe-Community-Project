@@ -6,7 +6,7 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navbar";
-// import HomePage from "./components/Homepage";
+import HomePage from "./components/homepage/Homepage";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       </header>
       <main>
         <Switch>
-          {/* <Route path="/" component={HomePage} exact /> */}
+          <Route path="/" component={HomePage} exact />
         </Switch>
       </main>
       <Footer />
