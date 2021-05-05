@@ -18,21 +18,23 @@ const Footer = (props) => {
     >
       <Container className="footer-content-container">
         <Row>
-          {/* first colom */}
+          {/* first column */}
           <Col className="footer-nav-margin">
-            <div className="footer-nav-text">
-              <Nav.Link href="#fabric">Fabric</Nav.Link>
-              <Nav.Link href="#yarn">Yarn</Nav.Link>
-              <Nav.Link href="#patterns">Patterns</Nav.Link>
-              <Nav.Link href="#tools">Tools</Nav.Link>
-            </div>
+            <Nav className="footer-nav-text">
+            <Nav.Link href="/fabric">Fabric</Nav.Link>
+            <Nav.Link href="/yarn">Yarn</Nav.Link>
+            <Nav.Link href="/patterns">Patterns</Nav.Link>
+            <Nav.Link href="/tools">Tools</Nav.Link>
+            </Nav>
           </Col>
-          {/* second colom */}
+          {/* second column */}
 
-          <Col>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+          <Col className="footer-nav-margin">
+          <Nav className="footer-nav-text">
+          <Nav.Link href="/blog">Blog</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link href="/contact">Contact</Nav.Link>
+         </Nav>
           </Col>
         </Row>
       </Container>

@@ -10,8 +10,11 @@
 
 .footer-nav-text {
   font-size: 20pt;
+  color: #707070;
   line-height: 1;
   word-spacing: 3px;
+  display: block;
+  font-family: Lato;
 }
 
 .footer-content-container {
