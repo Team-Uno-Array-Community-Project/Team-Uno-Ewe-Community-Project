@@ -11,11 +11,10 @@ const HomepageCards = (props) => {
             <CardGroup className="homepage-card-group">
               <Card>
                 <Card.Img variant="top" src={val.photo} />
-                <Card.Body>
-                  <Card.Text></Card.Text>
-                </Card.Body>
                 <Card.Footer>
-                  <small className="text-muted">Data must be plugged in then use val.blah like code above</small>
+                  <p className="vendor-text">{val.vendor}</p>
+                  <p className="product-text">{val.product}</p>
+                  <small className="text-muted">{val.price}</small>
                 </Card.Footer>
               </Card>
             </CardGroup>
