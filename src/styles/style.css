@@ -1,5 +1,4 @@
 .NavBarBottom {
-  position: -webkit-sticky;
   position: sticky;
   background-color: #ECF7F5 !important;
 }
@@ -66,15 +65,10 @@
 
 .contact-container {
   max-width: 1920px;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
   min-width: fit-content;
   min-height: calc(100vh - 145px - 3rem);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   margin-right: auto;
   margin-left: auto;
 }
@@ -117,7 +111,58 @@
   margin-bottom: 5%;
 }
 
-h2 {
+.about-page-jumbotron {
+  position: relative;
+  background-image: url(/src/assets/AboutpageHeroImage.png);
+  background-size: cover;
+  height: 550px;
+}
+
+.about-title {
   font-family: Baskerville;
+  color: #5c5c5c;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.sheep-image {
+  height: 340px;
+  width: 340px;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.sheep-text-container {
+  margin-top: -24%;
+  margin-left: 37%;
+  width: 700px;
+}
+
+.sheep-text {
+  font-family: Lato;
+  font-size: .9em;
+  color: #5c5c5c;
+}
+
+.christmas-image {
+  height: 350px;
+  width: 350px;
+  margin-left: 66.5%;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+
+.christmas-text-container {
+  margin-top: -40%;
+  margin-left: 5%;
+  width: 700px;
+  margin-bottom: 20%;
+}
+
+.christmas-text {
+  font-family: Lato;
+  font-size: .9em;
+  color: #5c5c5c;
 }
 /*# sourceMappingURL=style.css.map */

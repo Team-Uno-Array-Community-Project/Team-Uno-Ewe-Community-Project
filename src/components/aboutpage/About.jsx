@@ -2,7 +2,6 @@ import React from "react";
 import { Jumbotron, Container, Col } from "react-bootstrap";
 import SheepImage from "../../assets/SheepImage.png";
 import ChristmasImage from "../../assets/ChristmasImage.png";
-import "./About.css";
 
 const Homepage = () => {
   return (
