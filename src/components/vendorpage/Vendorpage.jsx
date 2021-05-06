@@ -1,6 +1,6 @@
 import React from 'react'
 import VendorProductCards from './VendorProductCards';
-import VendorpageData from "../homepage/HomepageData";
+import VendorpageData from "../vendorpage/VendorpageData";
 
 const VendorPage = () => {
   return (
