@@ -1,13 +1,14 @@
-import React from 'react'
-import VendorProductCards from './VendorProductCards';
-import VendorpageData from "../vendorpage/VendorpageData";
+import React from "react";
+import VendorProductCards from "./VendorProductCards";
 
-const VendorPage = () => {
+
+const VendorPage = (props) => {
+
   return (
-    <div>
-      <VendorProductCards VendorpageData={VendorpageData}/>
+    <div> 
+      <VendorProductCards ProductShown={props.ProductShown} />
     </div>
-  )
-}
+  );
+};
 
-export default VendorPage
+export default VendorPage;
