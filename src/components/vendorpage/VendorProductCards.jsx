@@ -7,7 +7,7 @@ const ProductCards = (props) => {
        <div>
       <h2 className="homepage-card-title">Store/Yarn</h2>
       <Row>
-        {props.VendorpageData.map((val, index) => (
+        {props.YarnData.map((val, index) => (
           <Col key={index} xs={6} md={4}>
             <CardGroup className="vendorpage-card-group">
               <Card className="vendor-product-cards">

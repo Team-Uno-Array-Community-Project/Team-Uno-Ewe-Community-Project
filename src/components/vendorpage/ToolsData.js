@@ -2,13 +2,14 @@ import homePageCardL from '../../assets/HomepageCardL.jpeg';
 import homePageCardM from '../../assets/HomepageCardM.jpeg';
 import homePageCardR from '../../assets/HomepageCardR.jpeg';
 
-const VendorpageData = [
-  {
-    photo: homePageCardL,
-    vendor: 'Laine',
-    product: 'Grey Yarn',
-    price: '$25 USD'
-  },
+const ToolsData = [
+
+    {
+      photo: homePageCardL,
+      vendor: 'TOOLS',
+      product: 'Grey Yarn',
+      price: '$25 USD'
+    },
   {
     photo: homePageCardM,
     vendor: 'Brooklyn Tweed',
@@ -59,4 +60,4 @@ const VendorpageData = [
   },
 ]
 
-export default VendorpageData;
+export default ToolsData;

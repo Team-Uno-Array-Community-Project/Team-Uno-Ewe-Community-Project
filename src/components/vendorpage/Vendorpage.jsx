@@ -1,13 +1,18 @@
-import React from 'react'
-import VendorProductCards from './VendorProductCards';
-import VendorpageData from "../vendorpage/VendorpageData";
+import React from "react";
+import VendorProductCards from "./VendorProductCards";
+import YarnData from "../vendorpage/YarnData";
+// import FibersData from "../vendorpage/FibersData";
+// import ToolsData from "../vendorpage/ToolsData";
+
 
 const VendorPage = () => {
   return (
     <div>
-      <VendorProductCards VendorpageData={VendorpageData}/>
+      <VendorProductCards YarnData={YarnData} />
+      {/* <VendorProductCards FibersData={FibersData} /> */}
+      {/* <VendorProductCards ToolsData={ToolsData} /> */}
     </div>
-  )
-}
+  );
+};
 
-export default VendorPage
+export default VendorPage;
