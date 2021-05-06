@@ -1,12 +1,13 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-// import "../blog/Ad.css";
 import AdLogo from '../../assets/nyt-logo.png';
+// import "../blog/Ad.css";
+
 
 const Ad = () => {
   return (
-    <div>
-      <Card className="ad-container">
+    <div className="ad-container">
+      <Card>
         <Card.Body style= {{backgroundColor: '#ECECEC'}}>
           <p className="ad-text-1">
             It's the stories you weren't expecting that make subscribing

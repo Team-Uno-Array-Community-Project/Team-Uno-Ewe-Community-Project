@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import { Navbar, Nav, Container, Image } from "react-bootstrap";
+import { Navbar, Nav, Container, Image, Row, Col } from "react-bootstrap";
 
 import logo from "../assets/Ewe_Logo_Mint.png";
 
@@ -11,11 +11,17 @@ const Navigation = (props) => {
   return (
     <>
       <Container className="company-logo-signin-container">
-        <Link to="/">
-          <Image src={logo} className="logo" alt="circular logo of a sheep" />
-        </Link>
-        <h2 className="company-name">Ewe Count</h2>
-        <p className="year-established">Est. 1990</p>
+        <Row xs={2} md={4} lg={6}>
+          <Col className="logo-col">
+          <Link to="/">
+            <Image src={logo} className="logo" alt="circular logo of a sheep" />
+          </Link>
+          </Col>
+          <Col>
+          <h2 className="company-name">Ewe Count</h2>
+          <p className="year-established">Est. 1990</p>
+          </Col>
+        </Row>
       </Container>
       <Navbar
         activeKey={location.pathname}
