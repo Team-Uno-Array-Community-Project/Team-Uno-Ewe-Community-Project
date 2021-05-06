@@ -1,16 +1,12 @@
 import React from "react";
 import VendorProductCards from "./VendorProductCards";
-import YarnData from "../vendorpage/YarnData";
-// import FibersData from "../vendorpage/FibersData";
-// import ToolsData from "../vendorpage/ToolsData";
 
 
-const VendorPage = () => {
+const VendorPage = (props) => {
+
   return (
-    <div>
-      <VendorProductCards YarnData={YarnData} />
-      {/* <VendorProductCards FibersData={FibersData} /> */}
-      {/* <VendorProductCards ToolsData={ToolsData} /> */}
+    <div> 
+      <VendorProductCards ProductShown={props.ProductShown} />
     </div>
   );
 };
