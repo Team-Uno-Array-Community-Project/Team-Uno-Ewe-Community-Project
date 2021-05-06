@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Row, Col, Container } from "react-bootstrap";
+import { Nav, Navbar, Row, Col, Container, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
 // import BackToTop from "../BackToTop/backtotop.js";
@@ -37,6 +37,12 @@ const Footer = (props) => {
          </Nav>
           </Col>
         </Row>
+        <Form.Group controlId="formBasicEmail">
+    <Form.Label className="form-label">Subscribe to our newsletter</Form.Label>
+    <Form.Control className="form-control" type="email" placeholder="Enter your email..." />
+    <Form.Text className="text-muted">
+    </Form.Text>
+  </Form.Group>
       </Container>
     </Navbar>
   );
