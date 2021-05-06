@@ -9,7 +9,11 @@
         "_contact.scss",
         "_Homepage.scss",
         "_HomepageCards.scss",
-        "_about.scss"
+        "_about.scss",
+        "_blogpage.scss",
+        "_blogcards.scss",
+        "_productcards.scss",
+        "_ad.scss"
     ],
     "names": [],
     "file": "style.css"

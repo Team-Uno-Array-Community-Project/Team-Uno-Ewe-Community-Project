@@ -11,8 +11,10 @@ import Navigation from "./components/HeaderNav";
 import ContactPage from "./components/contactpage/Contact";
 import ErrorPage from "./components/Error";
 import AboutPage from "./components/aboutpage/About";
+import BlogPage from "./components/blog/Blogpage";
 
 import HomepageData from "./components/homepage/HomepageData";
+import BlogpageData from "./components/blog/BlogpageData";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props}/>}
+          />
+           <Route exact path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props}/>}
           />
           <Route path="/contact" component={ContactPage} />
           <Route path="/about" component={AboutPage} />

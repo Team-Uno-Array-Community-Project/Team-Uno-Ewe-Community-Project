@@ -188,4 +188,10 @@
   font-size: .9em;
   color: #5c5c5c;
 }
+
+.ad-container {
+  height: 10rem;
+  width: 10rem;
+  margin-left: 50%;
+}
 /*# sourceMappingURL=style.css.map */
