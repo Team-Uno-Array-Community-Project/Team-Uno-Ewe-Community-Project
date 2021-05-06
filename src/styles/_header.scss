@@ -1,39 +1,44 @@
 .company-logo-signin-container {
-    width: 1829px;
-    height: 164px;
+  max-width: 1920px;
+  min-width: fit-content;
+  height: fit-content;
+  justify-self: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo-col {
+    max-width: 10em;
 }
 
 .logo {
-    position: relative;
-    width: 164px;
-    height: 164px;
-    right: 20%;
+  position: relative;
+  width: 164px;
+  height: 164px;
 }
 
 .company-name {
-    position: relative;
-    font-family: Baskerville;
-    font-size: 45px;
-    color: #707070;
-    bottom: 70%;
-    right: 5%;
+  position: relative;
+  font-family: Baskerville;
+  font-size: 45px;
+  color: #707070;
+  margin: auto;
+  padding-top: 15%;
 }
 
 .year-established {
-    position: relative;
-    font-family: Lato;
-    font-size: 20px;
-    color: #707070;
-    bottom: 75%;
-    right: 5%;
+  position: relative;
+  font-family: Lato;
+  font-size: 20px;
+  color: #707070;
 }
 
 .top-navbar {
-    background-color:#ECF7F5 !important;
+  background-color: #ecf7f5 !important;
 }
 
 .nav-links {
-    font-family: Lato;
-    font-size: 20px;
-    margin: auto;
+  font-family: Lato;
+  font-size: 20px;
+  margin: auto;
 }
