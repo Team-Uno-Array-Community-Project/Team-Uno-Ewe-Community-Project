@@ -12,9 +12,11 @@ import ContactPage from "./components/contactpage/Contact";
 import ErrorPage from "./components/Error";
 import AboutPage from "./components/aboutpage/About";
 import BlogPage from "./components/blog/Blogpage";
+import VendorPage from "./components/vendorpage/Vendorpage";
 
 import HomepageData from "./components/homepage/HomepageData";
 import BlogpageData from "./components/blog/BlogpageData";
+import VendorpageData from "./components/vendorpage/VendorpageData";
 
 
 function App() {
@@ -25,9 +27,11 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props}/>}
+          <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props} />}
           />
-           <Route exact path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props}/>}
+          <Route exact path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props} />}
+          />
+          <Route exact path="/vendor" render={(props) => <VendorPage VendorpageData={VendorpageData} {...props} />}
           />
           <Route path="/contact" component={ContactPage} />
           <Route path="/about" component={AboutPage} />
