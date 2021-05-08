@@ -1,6 +1,5 @@
 import React from "react";
-import { CardGroup, Card, Container, Button, Row, Col } from "react-bootstrap";
-// import "../blog/ProductCards.css";
+import { CardGroup, Card, Container, Col } from "react-bootstrap";
 
 const ProductCards = (props) => {
   return (

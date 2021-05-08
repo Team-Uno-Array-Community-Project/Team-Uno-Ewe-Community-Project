@@ -34,7 +34,7 @@ const BlogCards = (props) => {
             </div>
             <div class="description">
               <h1>{val.title}</h1>
-              <h2>Opening a door to the future</h2>
+              
               <p>
               {val.text}
               </p>

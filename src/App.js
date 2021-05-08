@@ -12,10 +12,14 @@ import ContactPage from "./components/contactpage/Contact";
 import ErrorPage from "./components/Error";
 import AboutPage from "./components/aboutpage/About";
 import BlogPage from "./components/blog/Blogpage";
+import VendorPage from "./components/vendorpage/Vendorpage";
+import AdminAccess from "./admin/Admin";
 
 import HomepageData from "./components/homepage/HomepageData";
 import BlogpageData from "./components/blog/BlogpageData";
-import AdminAccess from "./admin/Admin";
+import YarnData from "./components/vendorpage/YarnData";
+import FibersData from "./components/vendorpage/FibersData";
+import ToolsData from "./components/vendorpage/ToolsData";
 
 
 function App() {
@@ -26,11 +30,15 @@ function App() {
       </header>
       <main>
         <Switch>
+
           <Route exact path="/admin" component={AdminAccess} />
-          <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props}/>}
+          <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props} />}
           />
-           <Route exact path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props}/>}
+          <Route path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props} />}
           />
+          <Route path="/yarn" render={(props) => <VendorPage ProductShown={YarnData} {...props} />} />
+          <Route path="/fibers" render={(props) => <VendorPage ProductShown={FibersData} {...props} />} />
+          <Route path="/tools" render={(props) => <VendorPage ProductShown={ToolsData} {...props} />} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/about" component={AboutPage} />
           <Route component={ErrorPage} />
