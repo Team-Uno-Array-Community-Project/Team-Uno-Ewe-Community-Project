@@ -15,6 +15,7 @@ import BlogPage from "./components/blog/Blogpage";
 
 import HomepageData from "./components/homepage/HomepageData";
 import BlogpageData from "./components/blog/BlogpageData";
+import AdminAccess from "./admin/Admin";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       </header>
       <main>
         <Switch>
+          <Route exact path="/admin" component={AdminAccess} />
           <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props}/>}
           />
            <Route exact path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props}/>}
