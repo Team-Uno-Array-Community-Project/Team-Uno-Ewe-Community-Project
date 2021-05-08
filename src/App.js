@@ -13,13 +13,13 @@ import ErrorPage from "./components/Error";
 import AboutPage from "./components/aboutpage/About";
 import BlogPage from "./components/blog/Blogpage";
 import VendorPage from "./components/vendorpage/Vendorpage";
+import AdminAccess from "./admin/Admin";
 
 import HomepageData from "./components/homepage/HomepageData";
 import BlogpageData from "./components/blog/BlogpageData";
 import YarnData from "./components/vendorpage/YarnData";
 import FibersData from "./components/vendorpage/FibersData";
 import ToolsData from "./components/vendorpage/ToolsData";
-
 
 
 function App() {
@@ -30,6 +30,8 @@ function App() {
       </header>
       <main>
         <Switch>
+
+          <Route exact path="/admin" component={AdminAccess} />
           <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props} />}
           />
           <Route path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props} />}
