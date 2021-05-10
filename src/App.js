@@ -1,4 +1,8 @@
-import React from "react";
+
+import  React from "react";
+import { Admin, Resource } from 'react-admin';
+import  { AdminBlog }  from './admin/AdminBlog';
+import restProvider from 'ra-data-simple-rest';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
@@ -23,10 +27,19 @@ import ToolsData from "./components/vendorpage/ToolsData";
 
 
 function App() {
+  const {AdminBlog} = this.props 
   return (
+   
+
+
     <div className="app">
+          <Admin dataProvider={restProvider('http://localhost:3000')}>
+    <Resource name="posts" list={AdminBlog} />
+</Admin>
       <header>
         <Navigation />
+ 
+);
       </header>
       <main>
         <Switch>
@@ -50,3 +63,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
