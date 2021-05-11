@@ -27,23 +27,18 @@ import ToolsData from "./components/vendorpage/ToolsData";
 
 
 function App() {
-  const {AdminBlog} = this.props 
+  // const {AdminBlog} = this.props 
   return (
-   
-
-
     <div className="app">
-          <Admin dataProvider={restProvider('http://localhost:3000')}>
+          {/* <Admin dataProvider={restProvider('http://localhost:3000')}>
     <Resource name="posts" list={AdminBlog} />
-</Admin>
+</Admin> */}
       <header>
         <Navigation />
- 
 );
       </header>
       <main>
         <Switch>
-
           <Route exact path="/admin" component={AdminAccess} />
           <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props} />}
           />
