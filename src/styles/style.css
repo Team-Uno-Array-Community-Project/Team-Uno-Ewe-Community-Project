@@ -1,10 +1,11 @@
 .NavBarBottom {
   position: sticky;
   background-color: #ECF7F5 !important;
+  margin-top: 5%;
 }
 
 .footer-nav-margin {
-  margin-top: 2%;
+  margin-top: 5%;
   margin-bottom: 2%;
 }
 
