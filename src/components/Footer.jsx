@@ -9,6 +9,7 @@ const Footer = (props) => {
   const location = useLocation();
   //start of the section that renders on the bottom of each page
   return (
+    
     <Navbar
       activeKey={location.pathname}
       className="NavBarBottom"
