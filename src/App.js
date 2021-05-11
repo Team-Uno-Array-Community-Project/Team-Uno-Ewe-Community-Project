@@ -25,6 +25,7 @@ import YarnData from "./components/vendorpage/YarnData";
 import FibersData from "./components/vendorpage/FibersData";
 import ToolsData from "./components/vendorpage/ToolsData";
 
+require("dotenv").config();
 
 function App() {
   // const {AdminBlog} = this.props 
