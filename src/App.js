@@ -34,7 +34,6 @@ function App() {
 </Admin> */}
       <header>
         <Navigation />
-);
       </header>
       <main>
         <Switch>
