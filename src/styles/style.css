@@ -1,10 +1,11 @@
 .NavBarBottom {
   position: sticky;
   background-color: #ECF7F5 !important;
+  margin-top: 5%;
 }
 
 .footer-nav-margin {
-  margin-top: 2%;
+  margin-top: 5%;
   margin-bottom: 2%;
 }
 
@@ -88,7 +89,7 @@
 .contact-container {
   max-width: 1920px;
   min-width: fit-content;
-  min-height: calc(100vh - 145px - 3rem);
+  min-height: 150vh;
   height: fit-content;
   justify-self: center;
   margin-right: auto;
@@ -105,6 +106,10 @@
   margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.map-container {
+  top: 40%;
 }
 
 .homepage-jumbotron {
