@@ -30,7 +30,6 @@ function App() {
 
       <header>
         <Navigation />
-);
       </header>
       <main>
         <Switch>
