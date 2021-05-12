@@ -4,14 +4,13 @@ import restProvider from 'ra-data-simple-rest'
 // import VendorList from './VendorList'
 // import VendorCreate from './VendorCreate'
 // import VendorEdit from './VendorEdit'
-// import  AdminBlog from './admin/AdminBlog'
+import  {AdminBlog} from './AdminBlog'
 
 function AdminAccess() {
     return (
         <Admin dataProvider={restProvider('http://localhost:3000')}>
-            {/* <Resource name='posts' list={VendorList} create={VendorCreate} edit={VendorEdit} /> */}
-            {/* <Resource name='blogs' list={BlogTitle} create={BlogCreate} edit={BlogEdit} /> */}
-        </Admin>
+        <Resource name="posts" list={AdminBlog} />
+    </Admin>
     );
 }
 export default AdminAccess;
