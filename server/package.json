@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "server.js --watch db.json --port 5000 --middlewares ./range.js",
-    "dev": "concurrently \"npm run server\" \"npm run \""
+    "client": "npm start --prefix src",
+    "dev": "concurrently \"node server.js\" \"cd .. && npm run start\""
   },
   "author": "",
   "license": "ISC",
