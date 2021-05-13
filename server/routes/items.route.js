@@ -12,14 +12,15 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
-    const item = req.body;
+    const { item, price, description, vendor, image } = req.body;
 
     let newItemDocument = new ItemModel(
-        item);
+        { item, price, description, vendor, image });
     newItemDocument.save().then(document => {
         console.log(document);
         res.status(200).send(`Congrats, new item added!`);
     }).catch(err => {
+        console.error(err);
         res.status(400).send(`Failed to add new item.`);
     });
 });
