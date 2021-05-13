@@ -1,22 +1,16 @@
 let mongoose = require('mongoose');
 
-let inventorySchema = new mongoose.Schema({
-    id: {
+let itemModel = new mongoose.Schema({
+    item: {
         type: String,
         required: true,
-        unique: true,
-        lowercase: true
-    },
-    item:{
-        type: String,
-        required: true,
-        unique: true,
+        unique: false,
         lowercase: true
     },
     price: {
         type: String,
         required: true,
-        unique: true,
+        unique: false,
         lowercase: true
     },
     description: {
@@ -28,7 +22,7 @@ let inventorySchema = new mongoose.Schema({
     vendor: {
         type: String,
         required: true,
-        unique: true,
+        unique: false,
         lowercase: true
     },
     image: {
@@ -40,6 +34,4 @@ let inventorySchema = new mongoose.Schema({
 });
 
 
-
-
-module.exports = mongoose.model('item', inventorySchema);
+module.exports = mongoose.model(`item`, itemModel);
