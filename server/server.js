@@ -1,20 +1,22 @@
 const express = require('express');
 const app = express();
-const PORT = 3001;
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const PORT = 3003;
 
+require("dotenv").config();
 require('./data/database');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-
-app.use(cookieParser()); 
+app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
 app.use(cors());
 
-app.use('/blog', require('./routes/blogs.route'));
-app.use('/item', require('./routes/items.route'));
+app.use('/api/blog', require('./routes/routes'));
+app.use('/api/item', require('./routes/routes'));
+app.use('/api/admin', require('./routes/admin-route'));
+
 
 //make a route here to connect to our server and insert the data (insert many)
 // Function call
@@ -28,29 +30,7 @@ app.use('/item', require('./routes/items.route'));
 //     console.log(error)      // Failure
 // });
 
-//format of token
-
-
-//verify token
-function verifyToken(req, res, next) {
-    // get auth header value
-    const bearerHeader = req.headers['authorization'];
-    //check if bearer is undefined
-    if (typeof bearerHeader !== "undefined") {
-        //split at the space
-        const bearer = bearerHeader.split(' ');
-        const bearerToken = bearer[1];
-        //set the token
-        req.token = bearerToken;
-        //next middleware
-        next();
-
-    } else {
-        res.sendStatus(403);
-    }
-
 }
-
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
 });
