@@ -1,52 +1,32 @@
-
-
 const express = require('express');
 const app = express();
-const database = require('./data/database');
-const PORT = 3003;
-const jwt = require('jsonwebtoken');
-const cors = require('cors');
+const PORT = 3001;
 
-require("dotenv").config();
+require('./data/database');
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
+
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+
+app.use(cookieParser()); 
 app.use(cors());
 
+app.use('/blog', require('./routes/blogs.route'));
+app.use('/item', require('./routes/items.route'));
 
-app.post('/admin', verifyToken, (req, res) => {
-    jwt.verify(req.token, "secretkey", (err, authData) => {
-        if (err) {
-            res.sendStatus(403);
-        } else {
-            res.json({
-                message: 'welcome to my domain',
-                authData
-            });
-        }
-    });
-});
-
-app.post('/api/login', (req, res) => {
-    //admin
-    const admin = {
-        id: 1,
-        username: 'Penny',
-        password: '12345'
-    }
-    jwt.sign({ admin }, 'secretkey', { expiresIn: '3h'}, (err, token) => {
-        res.json({
-            token
-        })
-    });
-});
-
-// app.get('*', (req, res) => {
-//     res.send('listening on PORT 3003')
-//     console.log(res.send)
+//make a route here to connect to our server and insert the data (insert many)
+// Function call
+// User.insertMany([
+//     { name: 'Gourav', age: 20 },
+//     { name: 'Kartik', age: 20 },
+//     { name: 'Niharika', age: 20 }
+// ]).then(function () {
+//     console.log("Data inserted")  // Success
+// }).catch(function (error) {
+//     console.log(error)      // Failure
 // });
-app.use('/blog', require('./routes/routes'));
-app.use('/item', require('./routes/routes'));
 
 //format of token
 
@@ -74,4 +54,3 @@ function verifyToken(req, res, next) {
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
 });
-
