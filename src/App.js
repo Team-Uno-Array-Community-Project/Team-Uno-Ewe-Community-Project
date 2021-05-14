@@ -16,6 +16,7 @@ import AboutPage from "./components/aboutpage/About";
 import BlogPage from "./components/blog/Blogpage";
 import VendorPage from "./components/vendorpage/Vendorpage";
 import AdminAccess from "./admin/Admin";
+import AdminDash from "./components/admin/AdminDash";
 
 import HomepageData from "./components/homepage/HomepageData";
 import BlogpageData from "./components/blog/BlogpageData";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/tools" render={(props) => <VendorPage ProductShown={ToolsData} {...props} />} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/admindash" component={AdminDash} />
           <Route component={ErrorPage} />
         </Switch>
       </main>

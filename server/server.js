@@ -30,7 +30,6 @@ app.use('/api/admin', require('./routes/admin-route'));
 //     console.log(error)      // Failure
 // });
 
-}
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
 });
