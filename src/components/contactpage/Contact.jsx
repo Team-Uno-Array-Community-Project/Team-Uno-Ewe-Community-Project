@@ -52,9 +52,12 @@ const ContactPage = () => {
             <>
               <ContactModal />
             </>
-            <MapContainer />
+            
           </Form>
         </Col> 
+      </Row>
+      <Row>
+      <MapContainer />
       </Row>
       
     </div>

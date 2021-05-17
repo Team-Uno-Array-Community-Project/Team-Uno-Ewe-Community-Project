@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   ProSidebar,
   Menu,
@@ -8,8 +10,6 @@ import {
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Envelope, Pencil } from "react-bootstrap-icons";
-
-import React from "react";
 
 import "./SideMenuPanel.css";
 
