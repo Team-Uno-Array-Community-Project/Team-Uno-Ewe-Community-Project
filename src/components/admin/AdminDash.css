@@ -1,55 +1,9 @@
-.admin-dash-title {
+.admindash-container {
+  height: 100vh;
+  /* background-color: rgb(214, 210, 210); */
+}
+
+.admin-dash-header {
   font-family: Baskerville;
   color: rgb(92, 92, 92);
-  margin-left: 24%;
-  padding-top: 4%;
-}
-
-.admin-dash-container {
-  padding-top: 2%;
-  height: 100vh;
-  background-color: rgb(214, 210, 210);
-}
-
-.admin-form {
-  margin-top: 5%;
-  margin-right: 23%;
-  display: flex;
-  width: auto;
-}
-
-.image-upload-container {
-  border: .5rem;
-  border-color:rgb(92, 92, 92);
-  height: 20.25rem;
-  width: 20rem;
-  background-color: white;
-  margin-top: 10.3%!important;
-}
-
-.form-control {
-  width: 15rem;
-  background-color: white;
-}
-
-.save-publish-button {
-  margin-left: 44.5%;
-}
-
-.preview-button {
-  margin-top: 5.8%;
-}
-
-.user-pill {
-  margin-top: 6.2%;
-}
-
-.title-container {
-  margin-left: 11.2%;
-}
-
-.hello-text {
-  margin-top: 2.9%;
-  font-size: 1rem;
-
 }
