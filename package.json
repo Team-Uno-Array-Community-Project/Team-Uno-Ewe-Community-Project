@@ -20,7 +20,6 @@
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "filepond": "^4.27.1",
     "google-maps-react": "^2.0.6",
     "json-server": "^0.16.3",
     "jsonwebtoken": "^8.5.1",
@@ -32,15 +31,16 @@
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-icons": "^1.5.0",
     "react-dom": "^17.0.2",
-    "react-filepond": "^7.1.1",
     "react-native-chatbot": "*",
+    "react-pro-sidebar": "^0.6.0",
     "react-redux": "^7.2.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.0",
     "use-places-autocomplete": "^1.9.1",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "yamde": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",

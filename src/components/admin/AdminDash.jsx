@@ -1,69 +1,36 @@
 import React from "react";
-import { Form, Col, Row, Container, Button, Badge } from "react-bootstrap";
-import { ArrowBarUp, EyeFill } from "react-bootstrap-icons";
+import { Switch, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+
+import EditStore from "./editor_mode/EditStore";
+import EditBlog from "./editor_mode/EditBlog";
+import SideMenuPanel from "./SideMenuPanel";
+import Inbox from "./mailbox/Inbox";
+import Message from "./mailbox/Message";
+
+import InboxData from "./mailbox/InboxData";
+import MessageData from "./mailbox/MessageData";
 
 import "./AdminDash.css";
 
 const AdminDash = () => {
   return (
-    <Container className="admin-dash-container" fluid>
-      <Container>
-        <Container className="title-container">
-          <Row>
-            <Col>
-              <h2 className="admin-dash-title mr-auto">Admin Dashboard</h2>
-            </Col>
-            <h3 className="hello-text">Hello,</h3>
-            <Col>
-              <Badge pill variant="secondary" className="user-pill mr-auto">
-                Steven
-              </Badge>
-            </Col>
-          </Row>
-        </Container>
-        <Form className="admin-form">
-          <Row className="ml-auto">
-            <Col>
-              <Container className="image-upload-container">
-                <h1>
-                  <ArrowBarUp />
-                </h1>
-              </Container>
-              <Button className="preview-button" variant="light">
-                <EyeFill /> Preview
-              </Button>
-            </Col>
-            <Col>
-              <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>Store Category</Form.Label>
-                <Form.Control as="select">
-                  <option value="" disabled selected>
-                    Select a Category
-                  </option>
-                  <option>Yarn</option>
-                  <option>Fibers</option>
-                  <option>Tools</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group className="" controlId="exampleForm.ControlInput1">
-                <Form.Label>Vendor</Form.Label>
-                <Form.Control type="text" placeholder="Enter Vendor Name..." />
-              </Form.Group>
-              <Form.Group className="" controlId="exampleForm.ControlInput1">
-                <Form.Label>Product</Form.Label>
-                <Form.Control type="text" placeholder="Enter Product Name..." />
-              </Form.Group>
-              <Form.Group className="" controlId="exampleForm.ControlInput1">
-                <Form.Label>Price</Form.Label>
-                <Form.Control type="text" placeholder="Enter Price..." />
-              </Form.Group>
-              <Button className="save-publish-button" variant="dark">
-                Save + Publish
-              </Button>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
+    <Container className="admindash-container" fluid>
+    <div>
+      <header>
+        <SideMenuPanel />
+      </header>
+      <main>
+        <Switch>
+          <Route path="/admindash/editstore" component={EditStore} />
+          <Route path="/admindash/editblog" component={EditBlog} />
+          <Route path="/admindash/inbox" render={(props) => <Inbox InboxData={InboxData} {...props} />}
+          />
+          ƒ <Route path="/admindash/inbox/messages" render={(props) => <Message MessageData={MessageData} {...props} />}
+          />
+        </Switch>
+      </main>
+    </div>
     </Container>
   );
 };
