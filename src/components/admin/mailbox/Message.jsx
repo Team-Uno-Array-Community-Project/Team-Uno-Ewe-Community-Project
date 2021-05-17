@@ -5,8 +5,8 @@ import "./Message.css";
 
 const Message = (props) => {
   return (
-    <Container className="message-container" flex>
-      <h3 className="message-list-title">Messages</h3>
+    <Container className="message-container">
+      <h3 className="message-list-title">The message selected</h3>
       {props.MessageData.map((val, index) => (
         <Card className="message-card">
           <Card.Body>
