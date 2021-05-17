@@ -1,36 +1,24 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
-import EditStore from "./editor_mode/EditStore";
-import EditBlog from "./editor_mode/EditBlog";
 import SideMenuPanel from "./SideMenuPanel";
-import Inbox from "./mailbox/Inbox";
-import Message from "./mailbox/Message";
+// import Inbox from "./mailbox/Inbox";
 
-import InboxData from "./mailbox/InboxData";
-import MessageData from "./mailbox/MessageData";
+// import InboxData from "./mailbox/InboxData";
 
 import "./AdminDash.css";
 
-const AdminDash = () => {
+const AdminDash = (props) => {
   return (
-    <Container className="admindash-container" fluid>
-    <div>
-      <header>
-        <SideMenuPanel />
-      </header>
-      <main>
-        <Switch>
-          <Route path="/admindash/editstore" component={EditStore} />
-          <Route path="/admindash/editblog" component={EditBlog} />
-          <Route path="/admindash/inbox" render={(props) => <Inbox InboxData={InboxData} {...props} />}
-          />
-          ƒ <Route path="/admindash/inbox/messages" render={(props) => <Message MessageData={MessageData} {...props} />}
-          />
-        </Switch>
-      </main>
-    </div>
+    <Container className="admindash-container">
+      <Row>
+        <Col>
+          <SideMenuPanel />
+        </Col>
+        <Col>
+        {/* <Inbox inboxData={InboxData} {...props} /> */}
+        </Col>
+      </Row>
     </Container>
   );
 };
