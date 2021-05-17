@@ -15,7 +15,6 @@ import ErrorPage from "./components/Error";
 import AboutPage from "./components/aboutpage/About";
 import BlogPage from "./components/blog/Blogpage";
 import VendorPage from "./components/vendorpage/Vendorpage";
-import AdminAccess from "./admin/Admin";
 import AdminDash from "./components/admin/AdminDash";
 
 import HomepageData from "./components/homepage/HomepageData";
@@ -34,7 +33,6 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route exact path="/admin" component={AdminAccess} />
           <Route exact path="/" render={(props) => <HomePage HomepageData={HomepageData} {...props} />}
           />
           <Route path="/blog" render={(props) => <BlogPage HomepageData={BlogpageData} {...props} />}
