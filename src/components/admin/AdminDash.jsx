@@ -26,7 +26,7 @@ const AdminDash = () => {
           <Route path="/admindash/editblog" component={EditBlog} />
           <Route path="/admindash/inbox" render={(props) => <Inbox InboxData={InboxData} {...props} />}
           />
-          ƒ <Route path="/admindash/inbox/messages" render={(props) => <Message MessageData={MessageData} {...props} />}
+          <Route path="/admindash/inbox/messages" render={(props) => <Message MessageData={MessageData} {...props} />}
           />
         </Switch>
       </main>

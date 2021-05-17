@@ -5,9 +5,9 @@ import "./Message.css";
 
 const Message = (props) => {
   return (
-    <Container className="message-container" flex>
+    <Container className="message-container">
       <h3 className="message-list-title">Messages</h3>
-      {props.MessageData.map((val, index) => (
+      {/* {props.MessageData.map((val, index) => (
         <Card className="message-card">
           <Card.Body>
             <small className="">{val.timestamp}</small>
@@ -16,7 +16,7 @@ const Message = (props) => {
             <p className="product-text">{val.message}</p>
           </Card.Body>
         </Card>
-      ))}
+      ))} */}
     </Container>
   );
 };
