@@ -155,6 +155,16 @@
   margin-bottom: 5%;
 }
 
+.about-container {
+  max-width: 1920px;
+  min-width: fit-content;
+  min-height: calc(100vh - 145px - 3rem);
+  height: fit-content;
+  justify-self: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .about-page-jumbotron {
   position: relative;
   background-image: url(/src/assets/AboutpageHeroImage.png);
@@ -173,41 +183,47 @@
   height: 340px;
   width: 340px;
   margin-top: 2%;
-  margin-left: 5%;
+  margin-left: 20%;
   margin-bottom: 5%;
 }
 
 .sheep-text-container {
+  position: relative;
   margin-top: -24%;
-  margin-left: 37%;
+  margin-left: 45%;
   width: 700px;
+  height: 300px;
+  border: none;
+  overflow: auto;
 }
 
 .sheep-text {
+  position: relative;
   font-family: Lato;
   font-size: .9em;
+  margin-top: 1%;
   color: #5c5c5c;
+  text-align: left;
+  font-size: 14pt;
 }
 
 .christmas-image {
   height: 350px;
   width: 350px;
-  margin-left: 66.5%;
-  margin-top: 10%;
-  margin-bottom: 20%;
+  margin-left: 40%;
 }
 
 .christmas-text-container {
-  margin-top: -40%;
-  margin-left: 5%;
+  position: relative;
   width: 700px;
-  margin-bottom: 20%;
+  left: 20%;
 }
 
 .christmas-text {
   font-family: Lato;
   font-size: .9em;
   color: #5c5c5c;
+  font-size: 14pt;
 }
 
 /* Blog Page styling */
