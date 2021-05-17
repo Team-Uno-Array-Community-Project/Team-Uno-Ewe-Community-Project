@@ -5,8 +5,8 @@ import "./Inbox.css";
 
 const Inbox = (props) => {
   return (
-    <Container className="inbox-container" fluid>
-      <h3 className="message-list-title">Messages</h3>
+    <Container className="inbox-container">
+      <h3 className="message-list-title">Inbox</h3>
       {props.InboxData.map((val, index) => (
         <Card className="inbox-cards">
           <Card.Body>

@@ -1,6 +1,5 @@
 .admindash-container {
-  height: 100vh;
-  /* background-color: rgb(214, 210, 210); */
+  position: relative;
 }
 
 .admin-dash-header {
