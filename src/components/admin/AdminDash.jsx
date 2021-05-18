@@ -6,6 +6,9 @@ import SideMenuPanel from "./SideMenuPanel";
 import InboxData from "./mailbox/InboxData";
 import MessageData from "./mailbox/MessageData";
 
+import EditBlog from "./editor_mode/EditBlog";
+
+import "./AdminDash.css";
 import Mailbox from "./mailbox/Mailbox";
 
 // import "./AdminDash.css";
