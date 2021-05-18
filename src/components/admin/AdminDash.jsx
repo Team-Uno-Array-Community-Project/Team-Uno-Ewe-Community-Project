@@ -12,9 +12,11 @@ import InboxData from "./mailbox/InboxData";
 import MessageData from "./mailbox/MessageData";
 
 import "./AdminDash.css";
+import LoginForm from "./Login";
 
 const AdminDash = () => {
   return (
+    
     <Container className="admindash-container" fluid>
     <div>
       <header>
@@ -22,6 +24,7 @@ const AdminDash = () => {
       </header>
       <main>
         <Switch>
+          <Route path ='/admindash/login' component={LoginForm} />
           <Route path="/admindash/editstore" component={EditStore} />
           <Route path="/admindash/editblog" component={EditBlog} />
           <Route path="/admindash/inbox" render={(props) => <Inbox InboxData={InboxData} {...props} />}
