@@ -14,6 +14,11 @@ const InboxData = [
     from: "from 3",
     timestamp: "timestamp 3"
   },
+  {
+    subject: "subject 4",
+    from: "from 4",
+    timestamp: "timestamp 4"
+  }
 ]
 
 export default InboxData;

@@ -1,12 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import VendorProductCards from "./VendorProductCards";
 
 
-const VendorPage = (props) => {
-
+const VendorPage = () => {
+const [featured, setFeatured] = useState([]);
+useEffect(() => {
+  fetch("/api/item/")
+  .then(res => res.json())
+  .then(data => {
+    setFeatured(data);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}, [])
   return (
     <div> 
-      <VendorProductCards ProductShown={props.ProductShown} />
+      <VendorProductCards ProductShown={featured} />
     </div>
   );
 };

@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
-    const { item, price, description, vendor, image } = req.body;
+    const { item, price, description, vendor, image, featured } = req.body;
 
     let newItemDocument = new ItemModel(
-        { item, price, description, vendor, image });
+        { item, price, description, vendor, image, featured });
     newItemDocument.save().then(document => {
         console.log(document);
         res.status(200).send(`Congrats, new item added!`);

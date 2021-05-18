@@ -2,12 +2,13 @@ import React from "react";
 import { CardGroup, Card, Row, Col } from "react-bootstrap";
 
 const ProductCards = (props) => {
+  const featuredProducts = props.ProductShown.filter(product => product.featured);
   return (
     <div>
       <div>
         <h2 className="homepage-card-title">Store/Yarn</h2>
         <Row>
-          {props.ProductShown.map((val, index) => (
+          {featuredProducts.map((val, index) => (
             <Col key={index} xs={6} md={4}>
               <CardGroup className="vendorpage-card-group">
                 <Card className="vendor-product-cards"

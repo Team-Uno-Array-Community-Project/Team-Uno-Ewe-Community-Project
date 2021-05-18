@@ -1,16 +1,34 @@
 import React, { useState } from "react";
-import { Container, Col } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import Yamde from "yamde";
+import SideMenuPanel from "../SideMenuPanel";
 
 const EditBlog = () => {
   const [text, setText] = useState("");
   return (
     <>
-    <Container className="admin-dash-container" fluid>
-      <Col>
-        <Yamde className="text-editor" value={text} handler={setText} theme="light" />
+      <Row>
+        <Col>
+          <SideMenuPanel />
         </Col>
-    </Container>
+        <Col>
+          <Yamde
+            className="text-editor"
+            value={text}
+            handler={setText}
+            theme="light"
+          />
+          <Button className="save-publish-button" variant="dark">
+            Save + Publish
+          </Button>
+        </Col>
+        <Col>
+          <Form.Group className="" controlId="exampleForm.ControlInput1">
+            <Form.Label>Edit Post</Form.Label>
+            <Form.Control type="text" placeholder="Enter Post Title..." />
+          </Form.Group>
+        </Col>
+      </Row>
     </>
   );
 };
