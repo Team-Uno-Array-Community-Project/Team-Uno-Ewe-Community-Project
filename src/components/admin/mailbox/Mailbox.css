@@ -1,0 +1,10 @@
+.mailbox-previews {
+    padding: none;
+    min-width: 200px;
+    max-height: 800px;
+    overflow: auto;
+}
+
+.message-preview-card {
+    margin-top: 5%;
+}

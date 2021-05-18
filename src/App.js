@@ -27,6 +27,7 @@ import EditBlog from "./components/admin/editor_mode/EditBlog";
 import AdminDash from "./components/admin/AdminDash";
 
 import "./components/admin/AdminDash.css";
+// import MessageData from "./components/admin/mailbox/MessageData";
 
 function App() {
   return (
@@ -69,8 +70,12 @@ function App() {
           <Route path="/about" component={AboutPage} />
 
           <Route path="/admindash" component={AdminDash} />
+          {/* <Route
+            path="/admindash/"
+            render={(props) => <AdminDash MessageData={MessageData} {...props} />}
+          /> */}
           <Route path="/admindash/editstore" component={EditStore} />
-          <Route path="/admindash/editblog" component={EditBlog} />
+          <Route path="/editblog" component={EditBlog} />
 
           <Route component={ErrorPage} />
         </Switch>
