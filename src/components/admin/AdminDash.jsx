@@ -27,9 +27,6 @@ const AdminDash = (props) => {
         <Col sm={7} md={7} xl="auto">
           <Message />
         </Col>
-        <Col>
-        <EditBlog/>
-        </Col>
       </Row>
     </Container>
   );
