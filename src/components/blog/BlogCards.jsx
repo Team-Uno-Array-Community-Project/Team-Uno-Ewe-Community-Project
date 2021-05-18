@@ -38,9 +38,6 @@ const BlogCards = (props) => {
               <p>
               {val.text}
               </p>
-              <p class="read-more">
-                <a href="/">Read More</a>
-              </p>
             </div>
           </div>
         </div>

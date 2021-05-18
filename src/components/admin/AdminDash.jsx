@@ -3,6 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import SideMenuPanel from "./SideMenuPanel";
 
+// import Inbox from "./mailbox/Inbox";
+import EditStore from "./editor_mode/EditStore"
+// import InboxData from "./mailbox/InboxData";
+
+
 import InboxData from "./mailbox/InboxData";
 import MessageData from "./mailbox/MessageData";
 
@@ -27,6 +32,7 @@ const AdminDash = (props) => {
         <Col sm={7} md={7} xl="auto">
           <Message />
         </Col>
+        <EditStore />
       </Row>
     </Container>
   );

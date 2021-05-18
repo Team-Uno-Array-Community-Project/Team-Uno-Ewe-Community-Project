@@ -51,23 +51,21 @@ function App() {
             )}
           />
           <Route
-            path="/yarn"
-            render={(props) => (
-              <VendorPage ProductShown={YarnData} {...props} />
-            )}
+            path="/featured-products"
+            component={VendorPage}
           />
-          <Route
+          {/* <Route
             path="/fibers"
             render={(props) => (
               <VendorPage ProductShown={FibersData} {...props} />
             )}
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/tools"
             render={(props) => (
               <VendorPage ProductShown={ToolsData} {...props} />
             )}
-          />
+          /> */}
           <Route path="/contact" component={ContactPage} />
           <Route path="/about" component={AboutPage} />
 
