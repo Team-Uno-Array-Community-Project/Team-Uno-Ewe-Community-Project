@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import SideMenuPanel from "./SideMenuPanel";
 // import Inbox from "./mailbox/Inbox";
-
+import EditStore from "./editor_mode/EditStore"
 // import InboxData from "./mailbox/InboxData";
 
 import "./AdminDash.css";
@@ -18,6 +18,7 @@ const AdminDash = (props) => {
         <Col>
         {/* <Inbox inboxData={InboxData} {...props} /> */}
         </Col>
+        <EditStore />
       </Row>
     </Container>
   );

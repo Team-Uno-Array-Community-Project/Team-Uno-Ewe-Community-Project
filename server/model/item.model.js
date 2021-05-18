@@ -19,18 +19,23 @@ let itemModel = new mongoose.Schema({
         unique: true,
         lowercase: true
     },
-    vendor: {
-        type: String,
-        required: true,
-        unique: false,
-        lowercase: true
-    },
-    image: {
-        type: String,
-        required: true,
-        unique: true,
-        lowercase: true
-    }
+    // vendor: {
+    //     type: String,
+    //     required: true,
+    //     unique: false,
+    //     lowercase: true
+    // },
+    // image: {
+    //     type: String,
+    //     required: true,
+    //     unique: true,
+    //     lowercase: true
+    // },
+    // featured: {
+    //     type: Boolean,
+    //     required: true
+
+    // }
 });
 
 
