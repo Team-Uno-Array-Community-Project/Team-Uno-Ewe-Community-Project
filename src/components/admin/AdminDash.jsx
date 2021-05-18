@@ -7,13 +7,14 @@ import SideMenuPanel from "./SideMenuPanel";
 import EditStore from "./editor_mode/EditStore"
 // import InboxData from "./mailbox/InboxData";
 
-
 import InboxData from "./mailbox/InboxData";
 import MessageData from "./mailbox/MessageData";
 
 import EditBlog from "./editor_mode/EditBlog";
 
 import "./AdminDash.css";
+import LoginForm from "./Login";
+
 import Mailbox from "./mailbox/Mailbox";
 
 // import "./AdminDash.css";
@@ -21,6 +22,7 @@ import Message from "./mailbox/Message";
 
 const AdminDash = (props) => {
   return (
+
     <Container className="admindash-container">
       <Row>
         <Col sm={2} md={2} xl={2}>
