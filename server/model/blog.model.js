@@ -7,12 +7,7 @@ let blogModel = new mongoose.Schema({
 		unique: false,
 		lowercase: false
 	},
-	author: {
-		type: String,
-		required: true,
-		unique: false,
-		lowercase: false
-	},
+
 	text: {
 		type: String,
 		required: true,

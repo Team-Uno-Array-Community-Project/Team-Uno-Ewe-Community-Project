@@ -1,12 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Row, Col } from "react-bootstrap";
 import BlogCards from "./BlogCards";
 import ProductCards from "./ProductCards";
 import Ad from "./Ad";
 import HomepageData from "../homepage/HomepageData";
-import BlogCardData from "../blog/BlogCardData";
+
 
 const Blogpage = () => {
+  const [posts, setPosts] = useState([]);
+useEffect(() => {
+  fetch("/api/blog/")
+  .then(res => res.json())
+  .then(data => {
+    setPosts(data);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}, [])
   return (
     <section className="blog-container">
       <Row>
@@ -14,7 +25,7 @@ const Blogpage = () => {
           <Ad />
         </Col>
         <Col>
-        <BlogCards BlogCardData={BlogCardData} />
+        <BlogCards BlogCardData={posts} />
         </Col>
         <Col>
         <ProductCards HomepageData={HomepageData} />

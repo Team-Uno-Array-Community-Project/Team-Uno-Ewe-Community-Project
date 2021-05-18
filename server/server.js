@@ -13,8 +13,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(cors());
 
-app.use('/api/blog', require('./routes/routes'));
-app.use('/api/item', require('./routes/routes'));
+app.use('/api/blog', require('./routes/blogs.route'));
+app.use('/api/item', require('./routes/items.route'));
 app.use('/api/admin', require('./routes/admin-route'));
 
 
