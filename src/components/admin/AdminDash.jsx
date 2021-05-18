@@ -6,6 +6,8 @@ import SideMenuPanel from "./SideMenuPanel";
 
 // import InboxData from "./mailbox/InboxData";
 
+import EditBlog from "./editor_mode/EditBlog";
+
 import "./AdminDash.css";
 
 const AdminDash = (props) => {
@@ -17,6 +19,9 @@ const AdminDash = (props) => {
         </Col>
         <Col>
         {/* <Inbox inboxData={InboxData} {...props} /> */}
+        </Col>
+        <Col>
+        <EditBlog/>
         </Col>
       </Row>
     </Container>
