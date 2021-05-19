@@ -3,12 +3,13 @@ import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { loginAdmin } from "../../auth-store/adminSlice";
 
+import {useHistory} from "react-router-dom";
+
 function LoginForm() {
-  const [email, setEmail] = useState();
   const [credentials, setCredentials] = useState({});
-  const [password, setPassword] = useState();
-  // const [token, setToken] = useState('unauthorized');
+  
   const dispatch = useDispatch();
+  let history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +29,7 @@ function LoginForm() {
         console.log("Success:", jsonTok);
         dispatch(loginAdmin(jsonTok));
         localStorage.setItem("token", JSON.stringify(jsonTok));
+        history.push('/admindash')
       })
       .catch((error) => {
         console.error("Error:", error);
