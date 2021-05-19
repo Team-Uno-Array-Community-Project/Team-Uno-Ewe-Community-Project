@@ -1,7 +1,7 @@
 {
   "name": "team-uno-ewe-community-project",
   "version": "0.1.0",
-  "proxy": "http://localhost:3003",
+  "proxy": "http://localhost:3003/",
   "private": true,
   "dependencies": {
     "@babel/eslint-parser": "^7.14.2",
@@ -52,7 +52,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3003/",
   "eslintConfig": {
     "extends": [
       "react-app",
