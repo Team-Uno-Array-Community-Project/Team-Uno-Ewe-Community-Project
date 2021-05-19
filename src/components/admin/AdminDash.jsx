@@ -21,6 +21,7 @@ import Mailbox from "./mailbox/Mailbox";
 import Message from "./mailbox/Message";
 
 const AdminDash = (props) => {
+
   let token = localStorage.getItem("token");
 
   if (!token) {
