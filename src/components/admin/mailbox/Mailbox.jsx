@@ -7,8 +7,6 @@ import { Card, Container } from "react-bootstrap";
 // import InboxData from "./InboxData";
 // import MessageData from "./MessageData";
 
-import "./Mailbox.css";
-
 function Mailbox(props) {
   return (
     <Container className="mailbox-previews">

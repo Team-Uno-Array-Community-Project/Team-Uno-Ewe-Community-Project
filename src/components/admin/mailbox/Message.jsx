@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Card } from "react-bootstrap";
 
-import "./Message.css";
-
 const Message = () => {
   return (
     <Container className="message-container">
