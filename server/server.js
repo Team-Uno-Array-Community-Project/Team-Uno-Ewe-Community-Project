@@ -16,7 +16,7 @@ app.use(cors());
 app.use('/api/blog', require('./routes/blogs.route'));
 app.use('/api/item', require('./routes/items.route'));
 app.use('/api/admin', require('./routes/admin-route'));
-
+app.use('/api/contact', require('./routes/contact-form.route'));
 
 //make a route here to connect to our server and insert the data (insert many)
 // Function call

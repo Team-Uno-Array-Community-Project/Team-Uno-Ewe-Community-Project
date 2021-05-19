@@ -1,12 +1,37 @@
-import React from "react";
-import { Image, Form, Col, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Image, Form, Col, Row, Button } from "react-bootstrap";
 import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
-import ContactModal from "./ContactModal";
+// import ContactModal from "./ContactModal";
 
 import MapContainer from "../googlemap/GoogleMap";
 
 const ContactPage = () => {
+  const [form, setForm] = useState({ email: "", topic: "", message: "" });
+
+  const handleSubmit = () => {
+    console.log(form);
+    fetch("http://localhost:3003/api/contact/post")
+    .then((response) => response.json())
+    .then(form => {
+      console.log(form);
+    })
+    
+    // {
+    //   method: "POST",
+    //   body: (form),
+    // })
+   
+      // .then((response) => {
+      //   if (response.status === "success") {
+      //     alert("Message Sent.");
+      //     this.resetForm();
+      //   } else if (response.status === "fail") {
+      //     alert("Message failed to send.");
+      //   }
+      // });
+  };
+
   return (
     <div className="contact-container">
       <Row>
@@ -16,7 +41,6 @@ const ContactPage = () => {
           alt="sign that reads I love knitting"
         />
       </Row>
-     
 
       <Row>
         <Col>
@@ -26,40 +50,50 @@ const ContactPage = () => {
               <Form.Label>
                 <h3>email</h3>
               </Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control
+                type="text"
+                placeholder="name@example.com"
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+              />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
               {/* Section for umbrella reason for contacting */}
               <Form.Label>
-                <h3>Choose a topic</h3>
+                <h3>Describe your topic</h3>
               </Form.Label>
-              <Form.Control className="form-options" as="select">
-                {/* dropdown options for "Whats up" */}
-                <option>Product request</option>
-                <option>Event idea</option>
-                <option>Complaint or return</option>
-                <option>Employment</option>
-              </Form.Control>
+              <Form.Control
+                className="form-options"
+                type="text"
+                placeholder="Enter topic"
+                onChange={(e) => setForm({ ...form, topic: e.target.value })}
+              />
             </Form.Group>
             {/* section for custom text to submit */}
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>
                 <h4>Write your message here</h4>
               </Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control
+                rows={3}
+                type="text"
+                placeholder="Write message..."
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+              />
             </Form.Group>
-            
+
             <>
-              <ContactModal />
+              <Button
+              onClick={() => {
+                handleSubmit();
+              }}
+              >Send Message</Button>
             </>
-            
           </Form>
-        </Col> 
+        </Col>
       </Row>
       <Row>
-      <MapContainer />
+        <MapContainer />
       </Row>
-      
     </div>
   );
 };
