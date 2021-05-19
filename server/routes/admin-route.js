@@ -3,7 +3,7 @@ const router = require('express').Router();
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
-const AdminModel = require('../model/admin');
+const AdminModel = require('../model/admin-model');
 const bcryptService = require('../services/bcrypt-service');
 const jwtService = require('../services/jwt-service');
 
@@ -26,6 +26,7 @@ router.get("/admins", (req, res) => {
         console.log(document);
     })
 })
+
 router.patch('/refreshPassword', async (req, res) => {
     const hashedPassword = await bcryptService.hashPassword(process.env.ADMIN_PASS);
 
@@ -35,6 +36,23 @@ router.patch('/refreshPassword', async (req, res) => {
 
     })
 })
+
+router.post('/addadmin', (req, res) => {
+    let newAdmin = new AdminModel({
+        email: 'penny@gmail.com',
+        password: 'bootcamp2021isthebest'
+    });
+
+    newAdmin.save()
+        .then(doc => {
+            console.log(doc)
+            res.status(200).send('Successfully added the user!');
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(401).send('Failed to create user successfully.');
+        })
+});
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;

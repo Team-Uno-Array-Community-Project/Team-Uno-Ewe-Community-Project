@@ -6,7 +6,8 @@ const cookieParser = require('cookie-parser');
 const PORT = 3003;
 
 require("dotenv").config();
-require('./data/database');
+// require('./data/database');
+const mongoose = require('mongoose');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -17,6 +18,12 @@ app.use('/api/blog', require('./routes/blogs.route'));
 app.use('/api/item', require('./routes/items.route'));
 app.use('/api/admin', require('./routes/admin-route'));
 
+
+mongoose.connect(
+    process.env.DB_CONNECTION,
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    () => console.log("Connected to DB!")
+  );
 
 //make a route here to connect to our server and insert the data (insert many)
 // Function call
