@@ -1,6 +1,13 @@
 .NavBarBottom {
   position: sticky;
   background-color: #ecf7f5 !important;
+  height: 11em;
+}
+
+.footer-content-container {
+  width: 1680px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-nav-margin {
@@ -12,19 +19,13 @@
   font-size: 16pt;
   color: #707070;
   line-height: 1;
-  word-spacing: 3px;
+  word-spacing: 2px;
   display: block;
-  font-family: Lato;
-}
-
-.footer-content-container {
-  width: 1680px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: Baskerville;
 }
 
 .footer-form-label {
-  font-size: 20pt;
+  font-size: 16pt;
   color: #707070;
   line-height: 1;
   word-spacing: 3px;
@@ -36,14 +37,20 @@
   border: 0;
   background-color: #ecf7f5;
   font-family: Lato;
-  font-size: 15pt;
+  font-size: 12pt;
   border-bottom: 1px solid #707070;
+}
+
+.social-icons-container {
+  width: 200px;
+  height: 100px;
 }
 
 .social-icons {
   width: 50px;
   height: 50px;
-  margin-top: 1%;
+  margin-top: 15%;
+  padding-right: 10%;
   cursor: pointer;
   opacity: 45%;
   filter: invert(44%) sepia(63%) saturate(1316%) hue-rotate(123deg) brightness(99%) contrast(110%);
@@ -626,5 +633,91 @@
   font-size: 20pt;
   font-family: Baskerville;
   opacity: 80%;
+}
+
+.yamde-0-3-1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.text-editor {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.edit-blog-container {
+  width: 40%;
+  margin-right: 30em;
+  margin-top: 2em;
+}
+
+.admin-dash-title {
+  font-family: Baskerville;
+  color: #5c5c5c;
+  margin-left: 24%;
+  padding-top: 4%;
+}
+
+.admin-dash-container {
+  padding-top: 2%;
+  height: 100vh;
+  background-color: #d6d2d2;
+}
+
+.admin-form {
+  margin-top: 5%;
+  margin-right: 23%;
+  display: flex;
+  width: auto;
+}
+
+.image-upload-container {
+  border: .5rem;
+  border-color: #5c5c5c;
+  height: 20.25rem;
+  width: 20rem;
+  background-color: white;
+  margin-top: 10.3% !important;
+}
+
+.form-control {
+  width: 15rem;
+  background-color: white;
+}
+
+.preview-button {
+  margin-top: 5.8%;
+}
+
+.user-pill {
+  margin-top: 6.2%;
+}
+
+.title-container {
+  margin-left: 11.2%;
+}
+
+.hello-text {
+  margin-top: 2.9%;
+  font-size: 1rem;
+}
+
+.admindash-container {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0% !important;
+}
+
+.admin-dash-header {
+  font-family: Baskerville;
+  color: #5c5c5c;
+}
+
+.side-menu-panel {
+  height: 50rem !important;
 }
 /*# sourceMappingURL=style.css.map */

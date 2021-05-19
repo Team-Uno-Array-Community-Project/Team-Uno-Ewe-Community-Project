@@ -16,9 +16,9 @@ import VendorPage from "./components/vendorpage/Vendorpage";
 
 import HomepageData from "./components/homepage/HomepageData";
 import BlogpageData from "./components/blog/BlogpageData";
-import YarnData from "./components/vendorpage/YarnData";
-import FibersData from "./components/vendorpage/FibersData";
-import ToolsData from "./components/vendorpage/ToolsData";
+// import YarnData from "./components/vendorpage/YarnData";
+// import FibersData from "./components/vendorpage/FibersData";
+// import ToolsData from "./components/vendorpage/ToolsData";
 
 import EditStore from "./components/admin/editor_mode/EditStore";
 import EditBlog from "./components/admin/editor_mode/EditBlog";
@@ -26,7 +26,6 @@ import EditBlog from "./components/admin/editor_mode/EditBlog";
 
 import AdminDash from "./components/admin/AdminDash";
 
-import "./components/admin/AdminDash.css";
 // import MessageData from "./components/admin/mailbox/MessageData";
 
 function App() {

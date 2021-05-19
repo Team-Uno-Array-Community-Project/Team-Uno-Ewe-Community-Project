@@ -7,8 +7,6 @@ import { Card, Container } from "react-bootstrap";
 // import InboxData from "./InboxData";
 // import MessageData from "./MessageData";
 
-import "./Mailbox.css";
-
 function Mailbox(props) {
   //insert Use effect with fetch (get rq) , assign a variable 
   // use below in lieu of InboxData. see Abby's Edit store
