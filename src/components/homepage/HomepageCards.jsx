@@ -1,5 +1,5 @@
 import React from "react";
-import { CardGroup, Card, Button, Row, Col } from "react-bootstrap";
+import { CardGroup, Card, Row, Col } from "react-bootstrap";
 
 const HomepageCards = (props) => {
   return (
@@ -21,9 +21,7 @@ const HomepageCards = (props) => {
           </Col>
         ))}
       </Row>
-      <Button variant="secondary" className="view-all-button">
-        View All
-      </Button>
+     
     </div>
   );
 };

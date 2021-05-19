@@ -10,9 +10,8 @@ import EditStore from "./editor_mode/EditStore";
 import InboxData from "./mailbox/InboxData";
 import MessageData from "./mailbox/MessageData";
 
-import EditBlog from "./editor_mode/EditBlog";
+// import EditBlog from "./editor_mode/EditBlog";
 
-import "./AdminDash.css";
 import LoginForm from "./Login";
 
 import Mailbox from "./mailbox/Mailbox";
@@ -21,13 +20,11 @@ import Mailbox from "./mailbox/Mailbox";
 import Message from "./mailbox/Message";
 
 const AdminDash = (props) => {
+  // let token = localStorage.getItem("token");
 
-  let token = localStorage.getItem("token");
-
-  if (!token) {
-    return <LoginForm />;
-
-  } else {
+  // if (!token) {
+  //   return <LoginForm />;
+  // } else {
     return (
       <Container className="admindash-container">
         <Row>
@@ -49,6 +46,6 @@ const AdminDash = (props) => {
       </Container>
     );
   }
-};
+;
 
 export default AdminDash;

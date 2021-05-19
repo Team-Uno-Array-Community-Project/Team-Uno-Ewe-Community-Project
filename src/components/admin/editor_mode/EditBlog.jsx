@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button, Container } from "react-bootstrap";
 import Yamde from "yamde";
 import SideMenuPanel from "../SideMenuPanel";
 
@@ -11,7 +11,12 @@ const EditBlog = () => {
         <Col>
           <SideMenuPanel />
         </Col>
+        <Container className="edit-blog-container">
         <Col>
+        <Form.Group className="" controlId="exampleForm.ControlInput1">
+            <Form.Label>Create Post</Form.Label>
+            <Form.Control type="text" placeholder="Enter Post Title..." />
+          </Form.Group>
           <Yamde
             className="text-editor"
             value={text}
@@ -22,12 +27,7 @@ const EditBlog = () => {
             Save + Publish
           </Button>
         </Col>
-        <Col>
-          <Form.Group className="" controlId="exampleForm.ControlInput1">
-            <Form.Label>Edit Post</Form.Label>
-            <Form.Control type="text" placeholder="Enter Post Title..." />
-          </Form.Group>
-        </Col>
+        </Container>
       </Row>
     </>
   );

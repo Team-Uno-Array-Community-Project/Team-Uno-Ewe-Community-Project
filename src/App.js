@@ -26,7 +26,6 @@ import EditBlog from "./components/admin/editor_mode/EditBlog";
 
 import AdminDash from "./components/admin/AdminDash";
 
-import "./components/admin/AdminDash.css";
 // import MessageData from "./components/admin/mailbox/MessageData";
 
 function App() {

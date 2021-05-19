@@ -1,75 +1,29 @@
-import React from "react";
-// import { Form, Col, Row, Badge, Button, ButtonGroup, Card, CardGroup } from "react-bootstrap";
-// import {getImageFile} from "../../../assets/productImages";
-import {Dropdown, Container, Row, Col } from "react-bootstrap";
+import React, {useState, useEffect} from "react";
+import EditStoreCards from "../../admin/editor_mode/EditStoreCards";
 
-import "./EditStore.css";
 
 const EditStore = () => {
-  // const featuredProducts = props.ProductShown.filter(product => product.featured);
+  const [adminItems, setAdminItems] = useState([]);
+useEffect(() => {
+  fetch("/api/item/")
+  .then(res => res.json())
+  .then(data => {
+    setAdminItems(data);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}, [])
+
   // const [disabled, setDisabled] = useState(false);
-  // const onChecked = (e) => { 
-    
+  // const onChecked = (e) => {
+
   // }
   return (
-    <Container>
-      <Row>
-       
-<Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Yarn
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Coastal</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">BioBalance</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-<Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Fibers
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">BambooFiber</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-<Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Tools
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-
-</Row>
-  </Container>
-  )}
-
+    <div> 
+      <EditStoreCards ProductShown={adminItems} />
+    </div>
+  );
+};
 
 export default EditStore;
