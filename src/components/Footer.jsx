@@ -38,31 +38,28 @@ const Footer = (props) => {
             {/* first column */}
             <Col className="footer-nav-margin">
               <Nav className="footer-nav-text">
-                <Nav.Link href="/fabric">Fabric</Nav.Link>
-                <Nav.Link href="/yarn">Yarn</Nav.Link>
-                <Nav.Link href="/patterns">Patterns</Nav.Link>
-                <Nav.Link href="/tools">Tools</Nav.Link>
+                <Nav.Link href="/featured-products">Products</Nav.Link>
+                <Nav.Link href="/blog">Blog</Nav.Link>
               </Nav>
             </Col>
             {/* second column */}
 
             <Col className="footer-nav-margin">
               <Nav className="footer-nav-text">
-                <Nav.Link href="/blog">Blog</Nav.Link>
+                
                 <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
             </Col>
           </Row>
-          <div >
-              <Col>
+          <div className="social-icons-container">
+              
                 <img src={facebookicon} alt="facebook logo social icon" className="social-icons"/>
                 <img src={instagramicon} alt="instagram logo social icon" className="social-icons"/>
-              </Col>
-              <Col>
+              
                 <img src={twittericon} alt="twitter logo social icon" className="social-icons"/>
                 <img src={pinteresticon} alt="pinterest logo social icon" className="social-icons"/>
-              </Col>
+             
           </div>
           <Form.Group controlId="formBasicEmail">
             <Form.Label className="form-label footer-form-label">
