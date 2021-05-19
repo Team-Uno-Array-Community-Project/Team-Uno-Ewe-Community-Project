@@ -5,8 +5,8 @@ import ChristmasImage from "../../assets/ChristmasImage.png";
 
 const Homepage = () => {
   return (
-    <div className="about-container">
-      <Jumbotron className="about-page-jumbotron" fluid></Jumbotron>
+    <Container className="about-container">
+      <Jumbotron className="about-page-jumbotron"></Jumbotron>
       <h2 className="about-title">Our Story</h2>
       <Row>
         <Col>
@@ -86,7 +86,7 @@ const Homepage = () => {
           />
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

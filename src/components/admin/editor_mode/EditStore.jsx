@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Col, Row, Badge, Button, ButtonGroup, Card, CardGroup } from "react-bootstrap";
-import {getImageFile} from "../../../assets/productImages";
+// import {getImageFile} from "../../../assets/productImages";
 
 
 import "./EditStore.css";
@@ -35,7 +35,7 @@ const EditStore = (props) => {
               <CardGroup className="vendorpage-card-group">
                 <Card className="vendor-product-cards"
                 >
-                  <Card.Img variant="top" src={getImageFile(val.image)} />
+                  {/* <Card.Img variant="top" src={getImageFile(val.image)} /> */}
                   <Card.Footer>
                     <p className="vendor-text">{val.vendor}</p>
                     <p className="product-text">{val.product}</p>
