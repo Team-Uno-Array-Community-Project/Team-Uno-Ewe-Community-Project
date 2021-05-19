@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Form, Col, Row, Button } from "react-bootstrap";
+import { Jumbotron, Form, Col, Row, Button } from "react-bootstrap";
 import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
 // import ContactModal from "./ContactModal";
@@ -34,16 +34,15 @@ const ContactPage = () => {
 
   return (
     <div className="contact-container">
-      <Row>
-        <Image
+     
+        <Jumbotron
           className="knitting-image"
-          src={Contact_Hero}
-          alt="sign that reads I love knitting"
+          
         />
-      </Row>
+    
 
-      <Row>
-        <Col>
+      <Col>
+        <Row>
           <Form className="contact-form-container">
             {/* section for email input */}
             <Form.Group controlId="exampleForm.ControlInput1">
@@ -89,11 +88,10 @@ const ContactPage = () => {
               >Send Message</Button>
             </>
           </Form>
-        </Col>
-      </Row>
-      <Row>
-        <MapContainer />
-      </Row>
+          <MapContainer />
+        </Row>
+
+      </Col>
     </div>
   );
 };

@@ -24,7 +24,7 @@ export class MapContainer extends Component {
       className="map"
         google={this.props.google}
         zoom={18}
-        style={{width: 500, height: 500, position: 'relative', margin:"2%", padding:"2%", bottom:"2%"}}
+        style={{width: 300, height: 400}}
         initialCenter={{
           lat: this.state.mapCenter.lat,
           lng: this.state.mapCenter.lng,
