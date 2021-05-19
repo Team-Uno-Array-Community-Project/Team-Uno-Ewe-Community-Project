@@ -12,7 +12,6 @@ import MessageData from "./mailbox/MessageData";
 
 // import EditBlog from "./editor_mode/EditBlog";
 
-import "./AdminDash.css";
 import LoginForm from "./Login";
 
 import Mailbox from "./mailbox/Mailbox";
@@ -21,12 +20,10 @@ import Mailbox from "./mailbox/Mailbox";
 import Message from "./mailbox/Message";
 
 const AdminDash = (props) => {
-
   let token = localStorage.getItem("token");
 
   if (!token) {
     return <LoginForm />;
-
   } else {
     return (
       <Container className="admindash-container">

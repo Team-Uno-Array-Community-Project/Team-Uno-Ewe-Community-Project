@@ -627,4 +627,90 @@
   font-family: Baskerville;
   opacity: 80%;
 }
+
+.yamde-0-3-1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.text-editor {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.edit-blog-container {
+  width: 40%;
+  margin-right: 30em;
+  margin-top: 2em;
+}
+
+.admin-dash-title {
+  font-family: Baskerville;
+  color: #5c5c5c;
+  margin-left: 24%;
+  padding-top: 4%;
+}
+
+.admin-dash-container {
+  padding-top: 2%;
+  height: 100vh;
+  background-color: #d6d2d2;
+}
+
+.admin-form {
+  margin-top: 5%;
+  margin-right: 23%;
+  display: flex;
+  width: auto;
+}
+
+.image-upload-container {
+  border: .5rem;
+  border-color: #5c5c5c;
+  height: 20.25rem;
+  width: 20rem;
+  background-color: white;
+  margin-top: 10.3% !important;
+}
+
+.form-control {
+  width: 15rem;
+  background-color: white;
+}
+
+.preview-button {
+  margin-top: 5.8%;
+}
+
+.user-pill {
+  margin-top: 6.2%;
+}
+
+.title-container {
+  margin-left: 11.2%;
+}
+
+.hello-text {
+  margin-top: 2.9%;
+  font-size: 1rem;
+}
+
+.admindash-container {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0% !important;
+}
+
+.admin-dash-header {
+  font-family: Baskerville;
+  color: #5c5c5c;
+}
+
+.side-menu-panel {
+  height: 50rem !important;
+}
 /*# sourceMappingURL=style.css.map */
