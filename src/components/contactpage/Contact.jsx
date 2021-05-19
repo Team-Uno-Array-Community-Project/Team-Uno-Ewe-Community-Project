@@ -1,6 +1,5 @@
 import React from "react";
-import { Image, Form, Col, Row } from "react-bootstrap";
-import Contact_Hero from "../../assets/Contact_Hero.jpg";
+import { Jumbotron, Form, Col, Row } from "react-bootstrap";
 
 import ContactModal from "./ContactModal";
 
@@ -9,17 +8,15 @@ import MapContainer from "../googlemap/GoogleMap";
 const ContactPage = () => {
   return (
     <div className="contact-container">
-      <Row>
-        <Image
-          className="knitting-image"
-          src={Contact_Hero}
-          alt="sign that reads I love knitting"
-        />
-      </Row>
      
+        <Jumbotron
+          className="knitting-image"
+          
+        />
+    
 
-      <Row>
-        <Col>
+      <Col>
+        <Row>
           <Form className="contact-form-container">
             {/* section for email input */}
             <Form.Group controlId="exampleForm.ControlInput1">
@@ -48,18 +45,15 @@ const ContactPage = () => {
               </Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            
+
             <>
               <ContactModal />
             </>
-            
           </Form>
-        </Col> 
-      </Row>
-      <Row>
-      <MapContainer />
-      </Row>
-      
+          <MapContainer />
+        </Row>
+
+      </Col>
     </div>
   );
 };

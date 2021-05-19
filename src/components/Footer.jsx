@@ -65,11 +65,11 @@ const Footer = (props) => {
               </Col>
           </div>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label className="form-label">
+            <Form.Label className="form-label footer-form-label">
               Subscribe to our newsletter
             </Form.Label>
             <Form.Control
-              className="form-control"
+              className="form-control footer-form"
               type="email"
               placeholder="Enter your email..."
               autoComplete="off"

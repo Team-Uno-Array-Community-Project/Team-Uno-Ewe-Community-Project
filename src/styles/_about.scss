@@ -4,25 +4,26 @@
   min-height: calc(100vh - 145px - 3rem);
   height: fit-content;
   justify-self: center;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
 }
 
 .about-page-jumbotron {
   position: relative;
-  background-image: url(/src/assets/AboutpageHeroImage.png);
+  background-image: url(/src/assets/AboutpageHeroImage.jpeg);
   background-size: cover;
-  height: 550px;
+  height: 400px;
 }
 
 .about-title {
+  position: relative;
   font-family: Baskerville;
   color: rgb(92, 92, 92);
   text-align: center;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .sheep-image {
+  position: relative;
   height: 340px;
   width: 340px;
   margin-top: 2%;
@@ -51,6 +52,7 @@
 }
 
 .christmas-image {
+  position: relative;
   height: 350px;
   width: 350px;
   margin-left: 40%;
@@ -64,6 +66,7 @@
 }
 
 .christmas-text {
+  position: relative;
   font-family: Lato;
   font-size: .9em;
   color: rgb(92, 92, 92);

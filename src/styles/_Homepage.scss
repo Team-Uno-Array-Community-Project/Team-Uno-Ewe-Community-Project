@@ -1,6 +1,31 @@
+.home-container {
+  max-width: 1920px;
+  min-width: fit-content;
+  margin: auto;
+}
+
 .homepage-jumbotron {
-    position: relative;
-    background-image: url(/src/assets/HomepageHeroImage.jpg);
-    background-size: cover;
-    height: 550px;
+  position: relative;
+  background-image: url(/src/assets/HomepageHeroImage.jpg);
+  background-size: cover;
+  height: 350px;
+}
+
+.homepage-card-title {
+  font-family: Baskerville;
+  color: rgb(92, 92, 92);
+  text-align: center;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+.homepage-card-group {
+  margin: auto;
+  width: 70%;
+}
+
+.view-all-button {
+  margin: auto;
+  margin-top: 4em;
+  margin-bottom: 4em;
 }

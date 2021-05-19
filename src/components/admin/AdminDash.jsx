@@ -10,7 +10,7 @@ import EditStore from "./editor_mode/EditStore";
 import InboxData from "./mailbox/InboxData";
 import MessageData from "./mailbox/MessageData";
 
-import EditBlog from "./editor_mode/EditBlog";
+// import EditBlog from "./editor_mode/EditBlog";
 
 import "./AdminDash.css";
 import LoginForm from "./Login";

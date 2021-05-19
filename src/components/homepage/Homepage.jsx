@@ -1,16 +1,21 @@
 import React from "react";
-import { Jumbotron } from "react-bootstrap";
+import { Jumbotron, Button, Row, Container } from "react-bootstrap";
 import HomepageCards from "./HomepageCards";
 import HomepageData from "../homepage/HomepageData";
 
 
 const Homepage = () => {
   return (
-    <div>
-      <Jumbotron className="homepage-jumbotron" fluid>
-      </Jumbotron>
+    <Container className="home-container">
+      <Jumbotron className="homepage-jumbotron" />
+     
       <HomepageCards HomepageData={HomepageData}/>
-    </div> 
+      <Row>
+      <Button variant="secondary" className="view-all-button">
+        View All
+      </Button>
+      </Row>
+    </Container> 
   );
 };
 
