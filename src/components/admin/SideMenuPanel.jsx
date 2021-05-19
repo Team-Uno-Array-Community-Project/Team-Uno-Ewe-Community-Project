@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   ProSidebar,
@@ -9,9 +10,8 @@ import {
   SidebarFooter,
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import { Envelope, Pencil } from "react-bootstrap-icons";
+import { Envelope, Pencil, CurrencyDollar } from "react-bootstrap-icons";
 
-import "./SideMenuPanel.css";
 
 const SideMenuPanel = () => {
   return (
@@ -19,13 +19,23 @@ const SideMenuPanel = () => {
       <ProSidebar className="side-menu-panel">
         <SidebarContent>
           <Menu iconShape="square">
-            <MenuItem style={{ fontSize: "1.5rem", fontFamily: "Baskerville"}}>Admin Dashboard</MenuItem>
+            <MenuItem style={{ fontSize: "1.5rem", fontFamily: "Baskerville" }}>
+              Admin Dashboard
+            </MenuItem>
             <SubMenu title="Inbox" icon={<Envelope />}>
-              <MenuItem>Messages</MenuItem>
+              <Link to="/admindash">
+                <MenuItem>View Messages</MenuItem>
+              </Link>
             </SubMenu>
-            <SubMenu title="Editor Mode" icon={<Pencil />}>
-              <MenuItem>Store</MenuItem>
-              <MenuItem>Blog</MenuItem>
+            <SubMenu title="Store" icon={<CurrencyDollar />}>
+              <Link to="/admindash/editstore">
+                <MenuItem>Edit Store</MenuItem>
+              </Link>
+            </SubMenu>
+            <SubMenu title="Blog" icon={<Pencil />}>
+              <Link to="/editblog">
+                <MenuItem>Post to Blog</MenuItem>
+              </Link>
             </SubMenu>
           </Menu>
         </SidebarContent>
