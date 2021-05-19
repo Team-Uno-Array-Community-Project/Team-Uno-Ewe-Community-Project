@@ -10,6 +10,9 @@ import { Card, Container } from "react-bootstrap";
 import "./Mailbox.css";
 
 function Mailbox(props) {
+  //insert Use effect with fetch (get rq) , assign a variable 
+  // use below in lieu of InboxData. see Abby's Edit store
+  // use val.email, val.topic, val.message 
   return (
     <Container className="mailbox-previews">
       {props.InboxData.map((val, index) => (

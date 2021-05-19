@@ -10,36 +10,56 @@ const ContactPage = () => {
   const [form, setForm] = useState({ email: "", topic: "", message: "" });
 
   const handleSubmit = () => {
-    console.log(form);
-    fetch("http://localhost:3003/api/contact/post")
+
+  const data = { email: "emily12345", topic: "hello", message: "goodbye" };
+
+  fetch("http://localhost:3003/api/contact/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
     .then((response) => response.json())
-    .then(form => {
-      console.log(form);
+    .then((data) => {
+      console.log("Success:", data);
     })
-    
-    // {
-    //   method: "POST",
-    //   body: (form),
-    // })
-   
-      // .then((response) => {
-      //   if (response.status === "success") {
-      //     alert("Message Sent.");
-      //     this.resetForm();
-      //   } else if (response.status === "fail") {
-      //     alert("Message failed to send.");
-      //   }
-      // });
-  };
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  }
+
+
+    //   console.log(form);
+  //   fetch("http://localhost:3003/api/contact/post", {
+  //     method: "POST",
+  //     body: {form}
+  //   })
+  //   .then((response) => console.log(response.json()));
+  // }
+
+  // header: {
+  //   "Accept": "application/json",
+  //   "Content-Type": "application/json"
+  // },
+
+  // {
+  //   method: "POST",
+  //   body: (form),
+  // })
+
+  // .then((response) => {
+  //   if (response.status === "success") {
+  //     alert("Message Sent.");
+  //     this.resetForm();
+  //   } else if (response.status === "fail") {
+  //     alert("Message failed to send.");
+  //   }
+  // });
 
   return (
     <div className="contact-container">
-     
-        <Jumbotron
-          className="knitting-image"
-          
-        />
-    
+      <Jumbotron className="knitting-image" />
 
       <Col>
         <Row>
@@ -82,15 +102,16 @@ const ContactPage = () => {
 
             <>
               <Button
-              onClick={() => {
-                handleSubmit();
-              }}
-              >Send Message</Button>
+                onClick={() => {
+                  handleSubmit();
+                }}
+              >
+                Send Message
+              </Button>
             </>
           </Form>
           <MapContainer />
         </Row>
-
       </Col>
     </div>
   );
