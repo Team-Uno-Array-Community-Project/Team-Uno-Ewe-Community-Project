@@ -15,7 +15,7 @@ export const adminSlice = createSlice({
         logoutAdmin: (state) => {
             //removes token from local storage and resets state
             state.admin ={};
-            localStorage.removeItem('admin')
+            localStorage.removeItem('token')
         }
     }
 });
