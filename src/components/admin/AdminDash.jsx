@@ -13,6 +13,7 @@ import MessageData from "./mailbox/MessageData";
 // import EditBlog from "./editor_mode/EditBlog";
 
 import LoginForm from "./Login";
+import LogoutForm from "./Logout";
 
 import Mailbox from "./mailbox/Mailbox";
 
@@ -28,6 +29,9 @@ const AdminDash = (props) => {
     return (
       <Container className="admindash-container">
         <Row>
+        <LogoutForm />
+        </Row>
+        <Row>
           <Col sm={2} md={2} xl={2}>
             <SideMenuPanel />
           </Col>
@@ -41,7 +45,7 @@ const AdminDash = (props) => {
           <Col sm={7} md={7} xl="auto">
             <Message />
           </Col>
-          <EditStore />
+          {/* <EditStore /> */}
         </Row>
       </Container>
     );
