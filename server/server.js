@@ -22,20 +22,8 @@ app.use('/api/admin', require('./routes/admin-route'));
 mongoose.connect(
     process.env.DB_CONNECTION,
     { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log("Connected to DB!")
+    () => console.log("CONNECTED to DB!")
   );
-
-//make a route here to connect to our server and insert the data (insert many)
-// Function call
-// User.insertMany([
-//     { name: 'Gourav', age: 20 },
-//     { name: 'Kartik', age: 20 },
-//     { name: 'Niharika', age: 20 }
-// ]).then(function () {
-//     console.log("Data inserted")  // Success
-// }).catch(function (error) {
-//     console.log(error)      // Failure
-// });
 
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)

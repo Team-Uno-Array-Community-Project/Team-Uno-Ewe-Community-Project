@@ -1,8 +1,7 @@
 let mongoose = require('mongoose');
 
-const server = 'mongodb+srv://Admin_Ewe:Array2021TeamEwe@team-ewe.rwk2g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const server = process.env.DB_CONNECTION;
 // `127.0.0.1:27017`;
-// const database = `Ewe-count`;
 
 class Database {
     constructor() {
@@ -20,5 +19,6 @@ class Database {
             })
     }
 }
+
 
 module.exports = new Database();
