@@ -265,7 +265,7 @@
   display: flex;
   margin: auto;
   box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.6%;
+  margin-bottom: 5%;
   background: #fff;
   line-height: 1.4;
   font-family: Lato;
@@ -491,7 +491,7 @@
   height: 40rem;
   width: 15rem;
   margin-top: 10%;
-  margin-left: 20%;
+  margin-left: 28%;
 }
 
 .ad-text-1 {
@@ -635,28 +635,21 @@
   opacity: 80%;
 }
 
-.yamde-0-3-1 {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-}
-
-.text-editor {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-}
-
 .edit-blog-container {
-  width: 50%;
-  margin-right: 30em;
-  margin-top: 2em;
+  position: absolute;
+  margin-left: 22%;
+  margin-top: 2%;
 }
 
 .blog-text-input-window {
-  height: 300px;
+  height: 10em;
+  width: 30em;
+  border: #dad7d7 solid 1px;
+  border-radius: 2%;
+}
+
+.blog-input-window {
+  width: 20em;
 }
 
 .admin-dash-title {
@@ -686,11 +679,6 @@
   width: 20rem;
   background-color: white;
   margin-top: 10.3% !important;
-}
-
-.form-control {
-  width: 15rem;
-  background-color: white;
 }
 
 .preview-button {
@@ -723,6 +711,7 @@
 
 .side-menu-panel {
   height: 50rem !important;
+  position: sticky;
 }
 
 .blog-product-cards {
@@ -734,6 +723,7 @@
 .blog-product-cards-container {
   padding-top: 5%;
   padding-bottom: 10%;
+  padding-left: 10%;
 }
 
 .blog-product-cards-title {
