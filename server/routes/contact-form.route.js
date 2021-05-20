@@ -32,9 +32,9 @@ router.delete('/', (req, res) => {
         deleteItem,
     })
         .then((document) => {
-            res.status(200).send(`Item successfully deleted!`);
+            res.status(200).send(`Form successfully deleted!`);
         }).catch((err) => {
-            res.status(404).send(`Item deletion was unsuccessful.`);
+            res.status(404).send(`Form deletion was unsuccessful.`);
         });
 });
 
