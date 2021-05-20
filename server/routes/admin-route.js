@@ -1,31 +1,22 @@
-const express = require('express');
+// const express = require('express');
 const router = require('express').Router();
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
+// const mongoose = require('mongoose');
+// const jwt = require('jsonwebtoken');
 
 const AdminModel = require('../model/admin-model');
 const bcryptService = require('../services/bcrypt-service');
 const jwtService = require('../services/jwt-service');
 
 
-// router.post('/', verifyToken, (req, res) => {
-//     jwt.verify(req.token, "secretkey", (err, authData) => {
-//         if (err) {
-//             res.sendStatus(403);
-//         } else {
-//             res.json({
-//                 message: 'welcome to my domain',
-//                 authData
-//             });
-//         }
-//     });
-// });
 router.get("/admins", (req, res) => {
-    
+
     AdminModel.find({}).then(document => {
-        console.log(document);
-    })
-})
+     res.status(200).json(document);
+    console.log(document);
+  }).catch(err => {
+    res.status(404).send(`Collection not found: ${err}`);
+  });
+});
 
 router.patch('/refreshPassword', async (req, res) => {
     const hashedPassword = await bcryptService.hashPassword(process.env.ADMIN_PASS);
@@ -37,22 +28,25 @@ router.patch('/refreshPassword', async (req, res) => {
     })
 })
 
-router.post('/addadmin', (req, res) => {
-    let newAdmin = new AdminModel({
-        email: 'penny@gmail.com',
-        password: 'bootcamp2021isthebest'
+router.post('/addAdmin', async (req, res) => {
+    
+    const newAdmin = new AdminModel({
+    email: req.body.email,
+    password: req.body.password    
     });
 
-    newAdmin.save()
-        .then(doc => {
-            console.log(doc)
+    await newAdmin.save()
+        .then(document => {
+            console.log(document)
             res.status(200).send('Successfully added the user!');
         })
         .catch(err => {
             console.error(err);
-            res.status(401).send('Failed to create user successfully.');
+            res.status(401).send('Failed to create user');
         })
 });
+
+
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
@@ -78,52 +72,6 @@ router.post('/login', async (req, res) => {
         console.log(err);
         res.status(401).send('incorrect email/password');
     }
-
-
-
-
-
-
-    // const admins = admins.find(admins => {return admins.email === email && admins.password === password });
-
-    // if (admins) {
-    //     const accessToken = jwt.sign({ admins: admins.email, password: admins.password}, process.env.TOKEN_KEY);
-
-    //     res.json({
-    //         accessToken
-    //     });
-    // }else {
-    //     res.send( "Username or password is incorrect")
-    // }
-
-
-
-    // jwt.sign({ admin }, 'secretkey', { expiresIn: '3h'}, (err, token) => {
-    //     res.json({
-    //         token
-    //     })
-    // });
 });
-
-//verify token
-function verifyToken(req, res, next) {
-    // get auth header value
-    const bearerHeader = req.headers['authorization'];
-    //check if bearer is undefined
-    if (typeof bearerHeader !== "undefined") {
-        //split at the space
-        const bearer = bearerHeader.split(' ');
-        const bearerToken = bearer[1];
-        //set the token
-        req.token = bearerToken;
-        //next middleware
-        next();
-
-    } else {
-        res.sendStatus(403);
-    }
-
-}
-
 
 module.exports = router;
