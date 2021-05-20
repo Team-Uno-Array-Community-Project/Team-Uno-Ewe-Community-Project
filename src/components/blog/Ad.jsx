@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import AdLogo from '../../assets/nyt-logo.png';
-// import "../blog/Ad.css";
 
 
 const Ad = () => {

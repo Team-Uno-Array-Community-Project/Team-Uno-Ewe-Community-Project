@@ -1,12 +1,8 @@
-// const express = require('express');
 const router = require('express').Router();
-// const mongoose = require('mongoose');
-// const jwt = require('jsonwebtoken');
 
 const AdminModel = require('../model/admin-model');
 const bcryptService = require('../services/bcrypt-service');
 const jwtService = require('../services/jwt-service');
-
 
 router.get("/admins", (req, res) => {
 
@@ -45,8 +41,6 @@ router.post('/addAdmin', async (req, res) => {
             res.status(401).send('Failed to create user');
         })
 });
-
-
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
