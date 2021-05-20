@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Row, Col } from "react-bootstrap";
 import BlogCards from "./BlogCards";
-import ProductCards from "./ProductCards";
+import BlogProductCards from "./BlogProductCards";
 import Ad from "./Ad";
 import HomepageData from "../homepage/HomepageData";
 
@@ -28,7 +28,7 @@ useEffect(() => {
         <BlogCards BlogCardData={posts} />
         </Col>
         <Col>
-        <ProductCards HomepageData={HomepageData} />
+        <BlogProductCards HomepageData={HomepageData} />
         </Col>
       </Row>
     </section>

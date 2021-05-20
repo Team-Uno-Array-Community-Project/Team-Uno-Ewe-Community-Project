@@ -14,6 +14,24 @@ let blogModel = new mongoose.Schema({
 		unique: false,
 		lowercase: false
 	},
+	image: {
+		type: String,
+		required: true,
+		unique: false,
+		lowercase: false
+	},
+	author: {
+		type: String,
+		required: true,
+		unique: false,
+		lowercase: false
+	},
+	date: {
+		type: String,
+		required: true,
+		unique: false,
+		lowercase: false
+	},
 
 });
 
