@@ -1,4 +1,5 @@
 import React from "react";
+import {getBlogImageFile} from "../../assets/blogImages";
 
 const BlogCards = (props) => {
   return (
@@ -8,28 +9,12 @@ const BlogCards = (props) => {
         <div>
           <div class="blog-card">
             <div class="meta">
-              <div class="photo"></div>
+             <img class="photo" src={getBlogImageFile(val.image)} style={{height: "250px"}} alt="blog subject" />
               <ul class="details">
                 <li class="author">
-                  <a href="/">John Doe</a>
+                  <a href="/blog">{val.author}</a> 
                 </li>
-                <li class="date">Aug. 24, 2015</li>
-                <li class="tags">
-                  <ul>
-                    <li>
-                      <a href="/">Learn</a>
-                    </li>
-                    <li>
-                      <a href="/">Code</a>
-                    </li>
-                    <li>
-                      <a href="/">HTML</a>
-                    </li>
-                    <li>
-                      <a href="/">CSS</a>
-                    </li>
-                  </ul>
-                </li>
+                <li class="date">{val.date}</li>
               </ul>
             </div>
             <div class="description">

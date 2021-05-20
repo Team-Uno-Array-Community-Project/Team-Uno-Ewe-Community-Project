@@ -3,6 +3,7 @@ const router = express.Router();
 let BlogModel = require('../model/blog.model');
 
 router.get('/', (req, res) => {
+    
     BlogModel.find({}).then(document => {
         res.status(200).json(document);
         console.log(document);
@@ -12,14 +13,15 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
-    const posts = req.body;
+    const { title, text, image, author, date } = req.body;
 
-    let newPostDocument = new BlogModel(
-        posts);
+    let newPostDocument = new BlogModel({
+        title, text, image, author, date});
     newPostDocument.save().then(document => {
         console.log(document);
         res.status(200).send(`Congrats, new post created!`);
     }).catch(err => {
+        console.error(err);
         res.status(400).send(`Failed to create new post.`);
     });
 });
