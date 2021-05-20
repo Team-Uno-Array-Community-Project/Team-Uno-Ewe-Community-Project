@@ -13,6 +13,7 @@ import MessageData from "./mailbox/MessageData";
 // import EditBlog from "./editor_mode/EditBlog";
 
 import LoginForm from "./Login";
+import LogoutForm from "./Logout";
 
 import Mailbox from "./mailbox/Mailbox";
 
@@ -27,6 +28,9 @@ const AdminDash = (props) => {
   } else {
     return (
       <Container className="admindash-container">
+        <Row>
+        <LogoutForm />
+        </Row>
         <Row>
           <Col sm={2} md={2} xl={2}>
             <SideMenuPanel />
