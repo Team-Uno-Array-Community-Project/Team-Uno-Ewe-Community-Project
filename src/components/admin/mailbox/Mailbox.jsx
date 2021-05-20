@@ -11,23 +11,19 @@ function Mailbox(props) {
   //insert Use effect with fetch (get rq) , assign a variable
   // use below in lieu of InboxData. see Abby's Edit store
   // use val.email, val.topic, val.message
-  const [form, setForm] = useState({props.form});
-  useEffect(() => {
-    fetch("/api/contact", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(setForm),
-    })
+  const [form, setForm] = useState({});
+    useEffect(() => {
+      fetch("/api/contact")
       .then((response) => response.json())
       .then((data) => {
+        setForm(form)
         console.log("Success:", data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-    }
+    },
+    )
     
   return (
     <Container className="mailbox-previews">

@@ -21,7 +21,7 @@ import Message from "./mailbox/Message";
 
 const AdminDash = (props) => {
   let token = localStorage.getItem("token");
-  let props = form
+
   if (!token) {
     return <LoginForm />;
   } else {
@@ -32,7 +32,7 @@ const AdminDash = (props) => {
             <SideMenuPanel />
           </Col>
           <Col sm={3} md={3} xl={3}>
-            <Mailbox form={form}
+            <Mailbox 
             />
           </Col>
           <Col sm={7} md={7} xl="auto">
