@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import SideMenuPanel from "./SideMenuPanel";
@@ -6,9 +6,6 @@ import SideMenuPanel from "./SideMenuPanel";
 // import Inbox from "./mailbox/Inbox";
 import EditStore from "./editor_mode/EditStore";
 // import InboxData from "./mailbox/InboxData";
-
-import InboxData from "./mailbox/InboxData";
-import MessageData from "./mailbox/MessageData";
 
 // import EditBlog from "./editor_mode/EditBlog";
 
@@ -18,10 +15,23 @@ import LogoutForm from "./Logout";
 import Mailbox from "./mailbox/Mailbox";
 
 // import "./AdminDash.css";
-import Message from "./mailbox/Message";
 
-const AdminDash = (props) => {
+const AdminDash = () => {
   let token = localStorage.getItem("token");
+
+  const [form, setForm] = useState([]);
+    useEffect(() => {
+      fetch("/api/contact")
+      .then((response) => response.json())
+      .then((data) => {
+        setForm(data)
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    },
+    )
 
   if (!token) {
     return <LoginForm />;
@@ -36,11 +46,10 @@ const AdminDash = (props) => {
             <SideMenuPanel />
           </Col>
           <Col sm={3} md={3} xl={3}>
-            <Mailbox 
+            <Mailbox FormData={form}
             />
           </Col>
           <Col sm={7} md={7} xl="auto">
-            <Message />
           </Col>
           {/* <EditStore /> */}
         </Row>

@@ -1,48 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { Card, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Container, Button } from "react-bootstrap";
 
-// import Inbox from "./Inbox";
-// import Message from "./Message";
+// const Message = (props) => {
+//   return (
+//     <Container className="message-container">
+//       <h3 className="message-list-title">Messages</h3>
+//       {props.FormData.map((val, index) => (
+//         <Card className="message-selected-card">
+//           <Card.Header>{val.topic}</Card.Header>
+//           <Card.Body>
+//             <p className="sender-email">{val.email}</p>
+//             <p className="message-text">{val.message}</p>
+//           </Card.Body>
+//         </Card>
+//       ))}
+//     </Container>
+//   );
+// };
 
-// import InboxData from "./InboxData";
-// import MessageData from "./MessageData";
-
-function Mailbox(props) {
-  //insert Use effect with fetch (get rq) , assign a variable
-  // use below in lieu of InboxData. see Abby's Edit store
-  // use val.email, val.topic, val.message
-  const [form, setForm] = useState({});
-    useEffect(() => {
-      fetch("/api/contact")
-      .then((response) => response.json())
-      .then((data) => {
-        setForm(form)
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-    },
-    )
-    
+const Mailbox = (props) => {
+  const [messageSelected, setMessageSelected] = useState(0);
   return (
     <Container className="mailbox-previews">
-      {props.form.map((val, index) => (
+      {props.FormData.map((val, index) => (
         <Card className="message-preview-card">
           <Card.Header>
             <p className="vendor-text">{val.topic}</p>
             <p className="product-text">From: {val.email}</p>
-            <small className="">timestamp</small>
           </Card.Header>
           <Card.Body>
-           Message:
+            Message:
             <br />
             {val.message}
           </Card.Body>
+          <Button variant="warning" onClick={() => setMessageSelected(index)}>
+            View More
+          </Button>
         </Card>
       ))}
+      {/* <Message
+        className="message-displayed"
+        FormData={props.FormData[messageSelected]}
+      /> */}
     </Container>
   );
-}
+};
 
 export default Mailbox;

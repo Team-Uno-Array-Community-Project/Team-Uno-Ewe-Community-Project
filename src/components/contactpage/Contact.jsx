@@ -8,10 +8,10 @@ import MapContainer from "../googlemap/GoogleMap";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ email: "", topic: "", message: "" });
-  const [description, setDescription] = useState("");
+  // const [description, setDescription] = useState("");
   const handleSubmit = (e) => {
   // e.preventDefault();
-  setDescription("");
+  // setDescription("");
   fetch("http://localhost:3003/api/contact/post", {
     method: "POST",
     headers: {
@@ -41,10 +41,10 @@ const ContactPage = () => {
                 <h3>email</h3>
               </Form.Label>
               <Form.Control
-              value={description}
+              // value={description}
                 type="text"
                 placeholder="name@example.com"
-                onChange={(e) => setForm({ ...form, email: e.target.value }, setDescription(e.target.value))}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
@@ -53,11 +53,11 @@ const ContactPage = () => {
                 <h3>Describe your topic</h3>
               </Form.Label>
               <Form.Control
-               value={description}
+              //  value={description}
                 className="form-options"
                 type="text"
                 placeholder="Enter topic"
-                onChange={(e) => setForm({ ...form, topic: e.target.value }, setDescription(e.target.value))}
+                onChange={(e) => setForm({ ...form, topic: e.target.value })}
               />
             </Form.Group>
             {/* section for custom text to submit */}
@@ -66,11 +66,11 @@ const ContactPage = () => {
                 <h4>Write your message here</h4>
               </Form.Label>
               <Form.Control
-               value={description}
+              //  value={description}
                 rows={3}
                 type="text"
                 placeholder="Write message..."
-                onChange={(e) => setForm({ ...form, message: e.target.value }, setDescription(e.target.value))}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </Form.Group>
 
