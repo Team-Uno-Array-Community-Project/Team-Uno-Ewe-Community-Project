@@ -650,9 +650,13 @@
 }
 
 .edit-blog-container {
-  width: 40%;
+  width: 50%;
   margin-right: 30em;
   margin-top: 2em;
+}
+
+.blog-text-input-window {
+  height: 300px;
 }
 
 .admin-dash-title {
@@ -719,5 +723,22 @@
 
 .side-menu-panel {
   height: 50rem !important;
+}
+
+.blog-product-cards {
+  width: 70%;
+  height: 70%;
+  margin-bottom: 5%;
+}
+
+.blog-product-cards-container {
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+.blog-product-cards-title {
+  font-family: Baskerville;
+  color: #5c5c5c;
+  padding-left: 18%;
 }
 /*# sourceMappingURL=style.css.map */
