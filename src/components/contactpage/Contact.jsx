@@ -11,14 +11,12 @@ const ContactPage = () => {
 
   const handleSubmit = () => {
 
-  const data = { email: "emily12345", topic: "hello", message: "goodbye" };
-
   fetch("http://localhost:3003/api/contact/post", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(form),
   })
     .then((response) => response.json())
     .then((data) => {

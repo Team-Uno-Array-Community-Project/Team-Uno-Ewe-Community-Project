@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Container } from "react-bootstrap";
 
 // import Inbox from "./Inbox";
@@ -8,23 +8,40 @@ import { Card, Container } from "react-bootstrap";
 // import MessageData from "./MessageData";
 
 function Mailbox(props) {
-  //insert Use effect with fetch (get rq) , assign a variable 
+  //insert Use effect with fetch (get rq) , assign a variable
   // use below in lieu of InboxData. see Abby's Edit store
-  // use val.email, val.topic, val.message 
+  // use val.email, val.topic, val.message
+  const [form, setForm] = useState({props.form});
+  useEffect(() => {
+    fetch("/api/contact", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(setForm),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    }
+    
   return (
     <Container className="mailbox-previews">
-      {props.InboxData.map((val, index) => (
+      {props.form.map((val, index) => (
         <Card className="message-preview-card">
           <Card.Header>
-            <p className="vendor-text">Topic</p>
-            <p className="product-text">email from</p>
+            <p className="vendor-text">{val.topic}</p>
+            <p className="product-text">From: {val.email}</p>
             <small className="">timestamp</small>
           </Card.Header>
           <Card.Body>
-            This is a preview of the customer's message
-            Blahblahblahblahblahblahblahblahblahblahblahb
+           Message:
             <br />
-            lahblahblahblahblahblahblahblahblahblahblahblahblahblah.
+            {val.message}
           </Card.Body>
         </Card>
       ))}
