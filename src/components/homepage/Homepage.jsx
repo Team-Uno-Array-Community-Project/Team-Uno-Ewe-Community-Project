@@ -2,6 +2,7 @@ import React from "react";
 import { Jumbotron, Button, Row, Container } from "react-bootstrap";
 import HomepageCards from "./HomepageCards";
 import HomepageData from "../homepage/HomepageData";
+import { Link } from "react-router-dom";
 
 
 const Homepage = () => {
@@ -11,9 +12,11 @@ const Homepage = () => {
      
       <HomepageCards HomepageData={HomepageData}/>
       <Row>
-      <Button variant="secondary" className="view-all-button">
+        <Link className="view-all-button" to="/featured-products">
+      <Button variant="secondary">
         View All
       </Button>
+      </Link>
       </Row>
     </Container> 
   );
