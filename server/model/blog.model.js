@@ -14,7 +14,7 @@ let blogModel = new mongoose.Schema({
 		unique: false,
 		lowercase: false
 	},
-	image: {
+	URL: {
 		type: String,
 		required: true,
 		unique: false,

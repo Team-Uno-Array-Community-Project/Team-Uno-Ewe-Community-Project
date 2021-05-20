@@ -1,5 +1,5 @@
 import React from "react";
-import {getBlogImageFile} from "../../assets/blogImages";
+
 
 const BlogCards = (props) => {
   return (
@@ -9,7 +9,7 @@ const BlogCards = (props) => {
         <div>
           <div class="blog-card">
             <div class="meta">
-             <img class="photo" src={getBlogImageFile(val.image)} style={{height: "250px"}} alt="blog subject" />
+             <img class="photo" src={(val.URL)} style={{height: "250px"}} alt="blog subject" />
               <ul class="details">
                 <li class="author">
                   <a href="/blog">{val.author}</a> 

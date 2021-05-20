@@ -1,24 +1,17 @@
-.yamde-0-3-1 {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-    
-  }
-  
-  .text-editor {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-  }
   
   .edit-blog-container {
-    width: 50%;
-    margin-right: 30em;
-    margin-top: 2em;
+    position: absolute;
+    margin-left: 22%;
+    margin-top: 2%;
   }
 
   .blog-text-input-window {
-    height: 300px;
+    height: 10em;
+    width: 30em;
+    border: rgb(218, 215, 215) solid 1px;
+    border-radius: 2%;
+  }
+
+  .blog-input-window {
+    width: 20em;
   }
