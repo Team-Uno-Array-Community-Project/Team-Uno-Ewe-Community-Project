@@ -13,10 +13,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
-    const { title, text, image, author, date } = req.body;
+    const { title, text, URL, author, date } = req.body;
 
     let newPostDocument = new BlogModel({
-        title, text, image, author, date});
+        title, text, URL, author, date});
     newPostDocument.save().then(document => {
         console.log(document);
         res.status(200).send(`Congrats, new post created!`);

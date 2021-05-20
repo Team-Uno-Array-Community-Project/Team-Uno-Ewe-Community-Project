@@ -4,12 +4,15 @@ import { Row, Col, Form, Button, Container } from "react-bootstrap";
 import SideMenuPanel from "../SideMenuPanel";
 
 const EditBlog = () => {
-
-
-  const [blogPost, setBlogPost] = useState({title: "", text: "", image: "", author: "", date: ""});
+  const [blogPost, setBlogPost] = useState({
+    title: "",
+    text: "",
+    URL: "",
+    author: "",
+    date: "",
+  });
 
   const handleSubmit = () => {
-
     fetch("http://localhost:3003/api/blog/post", {
       method: "POST",
       headers: {
@@ -40,6 +43,7 @@ const EditBlog = () => {
             <Form.Group className="" controlId="exampleForm.ControlInput1">
               <Form.Label>Blog Post Title</Form.Label>
               <Form.Control
+                className="blog-input-window"
                 type="text"
                 onChange={(e) =>
                   setBlogPost({ ...blogPost, title: e.target.value })
@@ -48,27 +52,31 @@ const EditBlog = () => {
               />
             </Form.Group>
             <Form.Group className="" controlId="exampleForm.ControlInput5">
-            <Form.Label>Blog Text</Form.Label>
-              <Form.Control 
-                type="text"
+              <Form.Label>Type Blog Text Here</Form.Label>
+              < br/>
+              <textarea
                 onChange={(e) =>
                   setBlogPost({ ...blogPost, text: e.target.value })
-                } className="blog-text-input-window" controlId="exampleForm.ControlInput5"
+                }
+                type="text"
+                className="blog-text-input-window"
+                controlId="exampleForm.ControlInput5"
                 placeholder="Enter blog post..."
               />
-              </Form.Group>
-            
+            </Form.Group>
+
             <Form.Group className="" controlId="exampleForm.ControlInput2">
-            <Form.Label>Image URL</Form.Label>
+              <Form.Label>Image URL</Form.Label>
               <Form.Control
                 type="text"
                 onChange={(e) =>
-                  setBlogPost({ ...blogPost, image: e.target.value })
+                  setBlogPost({ ...blogPost, URL: e.target.value })
                 }
                 placeholder="Enter image URL..."
+                className="blog-input-window"
               />
-              </Form.Group>
-              <Form.Group className="" controlId="exampleForm.ControlInput3">
+            </Form.Group>
+            <Form.Group className="" controlId="exampleForm.ControlInput3">
               <Form.Label>Author Name</Form.Label>
               <Form.Control
                 type="text"
@@ -76,24 +84,30 @@ const EditBlog = () => {
                   setBlogPost({ ...blogPost, author: e.target.value })
                 }
                 placeholder="Enter author name..."
+                className="blog-input-window"
               />
-              </Form.Group>
-              <Form.Group className="" controlId="exampleForm.ControlInput4">
+            </Form.Group>
+            <Form.Group className="" controlId="exampleForm.ControlInput4">
               <Form.Label>Posted Date</Form.Label>
-              <Form.Control className="blog-date-input-window"
+              <Form.Control
+                className="blog-input-window"
                 type="text"
                 onChange={(e) =>
                   setBlogPost({ ...blogPost, date: e.target.value })
                 }
                 placeholder="Enter posted date..."
               />
-              </Form.Group>
-            <Button type="submit" onClick={() => {
-                  handleSubmit();
-                }} className="save-publish-button" variant="dark">
+            </Form.Group>
+            <Button
+              type="submit"
+              onClick={() => {
+                handleSubmit();
+              }}
+              className="save-publish-button"
+              variant="dark"
+            >
               Save + Publish
             </Button>
-            
           </Col>
         </Container>
       </Row>
