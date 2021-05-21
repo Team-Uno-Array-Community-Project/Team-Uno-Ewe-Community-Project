@@ -714,6 +714,19 @@
   position: sticky;
 }
 
+.admin-home-button {
+  text-align: center;
+  font-family: Lato;
+  font-size: 14pt;
+}
+
+.logout-btn {
+  font-size: 14pt;
+  padding: 0;
+  width: 4em;
+  font-family: Lato;
+}
+
 .blog-product-cards {
   width: 70%;
   height: 70%;

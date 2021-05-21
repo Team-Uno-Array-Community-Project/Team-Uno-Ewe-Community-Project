@@ -20,7 +20,7 @@ const Navigation = (props) => {
   //takes the admin back to admin dashboard if they are in a public page, also only displays if a token is in local storage
   const adminDashRoute = () => {
     if (token) {
-      return <Button variant="info" href="/admindash"> Admin Dashboard</Button>
+      return <Button variant="info" className="admin-home-button" href="/admindash">Admin Dashboard</Button>
     }
   }
 
