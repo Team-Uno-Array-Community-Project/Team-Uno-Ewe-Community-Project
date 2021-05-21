@@ -8,7 +8,6 @@ let ItemModel = require('../model/item.model');
 router.get('/', (req, res) => {
     ItemModel.find({}).then(document => {
         res.status(200).json(document);
-        console.log(document);
     }).catch(err => {
         res.status(404).send(`Items not found: ${err}`);
     });
@@ -20,7 +19,6 @@ router.post('/post', (req, res) => {
     let newItemDocument = new ItemModel(
         { item, price, description, vendor, image, featured });
     newItemDocument.save().then(document => {
-        console.log(document);
         res.status(200).send(`Congrats, new item added!`);
     }).catch(err => {
         console.error(err);
@@ -54,8 +52,6 @@ router.delete('/', (req, res) => {
         });
 });
 router.patch('/patch', (req, res) => {
-    // const query = {'vendor': 'woolfolk'};
-    // const newFeaturedStatus = {'featured': false};
     const {_id, newFeaturedStatus } = req.body;
 
     let updatedUserDocument = {};

@@ -773,4 +773,24 @@
 .message-list-title {
   font-family: Lato;
 }
+
+.login-cont-size {
+  width: 35em;
+  height: 35em;
+  text-align: center;
+}
+
+.login-form-position {
+  width: 25em;
+  height: 25rem;
+  border: thin solid black;
+  padding: 20px;
+  margin-left: 4em;
+  margin-top: 5em;
+  justify-self: center;
+}
+
+.login-spacing {
+  margin-top: 1em;
+}
 /*# sourceMappingURL=style.css.map */
