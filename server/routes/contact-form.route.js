@@ -5,7 +5,6 @@ let ContactFormModel = require('../model/contact-form.model');
 router.get('/', (req, res) => {
     ContactFormModel.find({}).then(document => {
         res.status(200).json(document);
-        console.log(document);
     }).catch(err => {
         res.status(404).send(`Contact form not found: ${err}`);
     });

@@ -8,8 +8,7 @@ router.get("/admins", (req, res) => {
 
     AdminModel.find({}).then(document => {
      res.status(200).json(document);
-    console.log(document);
-  }).catch(err => {
+      }).catch(err => {
     res.status(404).send(`Collection not found: ${err}`);
   });
 });
@@ -33,7 +32,6 @@ router.post('/addAdmin', async (req, res) => {
 
     await newAdmin.save()
         .then(document => {
-            console.log(document)
             res.status(200).send('Successfully added the user!');
         })
         .catch(err => {
@@ -48,8 +46,6 @@ router.post('/login', async (req, res) => {
     try {
         let loggedAdmin = await AdminModel.find({ email });
 
-        console.log(email, password, loggedAdmin[0]);
-
         if (await bcryptService.checkPassword(password, loggedAdmin[0].password)) {
             loggedAdmin = loggedAdmin[0].toJSON();
             delete loggedAdmin.password;
@@ -57,13 +53,10 @@ router.post('/login', async (req, res) => {
             const accessToken = jwtService.createToken(loggedAdmin);
             res.status(200).json({ accessToken, ...loggedAdmin })
 
-            console.log( accessToken, + 'test')
-
         } else {
             res.status(401).send("not yarnie enough");
         }
     }catch(err) {
-        console.log(err);
         res.status(401).send('incorrect email/password');
     }
 });

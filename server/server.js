@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const PORT = 3003;
 
 require("dotenv").config();
-// require('./data/database');
 const mongoose = require('mongoose');
 
 app.use(express.json());
@@ -25,5 +24,5 @@ mongoose.connect(
   );
 
 app.listen(PORT, () => {
-    console.log(`Listening on ${PORT}`)
+  console.log(`Listening on ${PORT}`)
 });
