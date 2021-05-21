@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Jumbotron, Form, Col, Row, Button, Modal } from "react-bootstrap";
-// import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
 import MapContainer from "../googlemap/GoogleMap";
 
+// Function that render the Contact Page and Contact Form
+// viewable on public site //
 const ContactPage = () => {
   const [form, setForm] = useState({});
   const [show, setShow] = useState();
@@ -11,6 +12,8 @@ const ContactPage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // Function that posts the Contact Form information
+  // to the database as an object via a fetch request //
   const handleSubmit = (e) => {
     fetch("http://localhost:3003/api/contact/post", {
       method: "POST",
@@ -21,8 +24,7 @@ const ContactPage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("i am here");
-        e.target.reset();
+        console.log("Success:");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -38,35 +40,35 @@ const ContactPage = () => {
             {/* section for email input */}
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>
-                <h3>email</h3>
+                <h3>Email</h3>
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder="name@example.com"
+                placeholder="Enter your email..."
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
               {/* Section for umbrella reason for contacting */}
               <Form.Label>
-                <h3>Describe your topic</h3>
+                <h3>Message Subject</h3>
               </Form.Label>
               <Form.Control
                 className="form-options"
                 type="text"
-                placeholder="Enter topic"
+                placeholder="Enter your message subject..."
                 onChange={(e) => setForm({ ...form, topic: e.target.value })}
               />
             </Form.Group>
             {/* section for custom text to submit */}
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>
-                <h4>Write your message here</h4>
+                <h4>Message</h4>
               </Form.Label>
               <Form.Control
                 rows={3}
                 type="text"
-                placeholder="Write message..."
+                placeholder="Write your message here..."
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </Form.Group>
@@ -78,7 +80,7 @@ const ContactPage = () => {
             >
               Submit
             </Button>
-
+            {/* Modal that indicates to user that the message has been sent upon submit */}
             <Modal
               className="modal-styling"
               show={show}
@@ -90,7 +92,7 @@ const ContactPage = () => {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body className="modal-contact-body">
-                your message has been sent!
+                Your message has been sent!
               </Modal.Body>
               <Modal.Footer>
                 <Button
@@ -103,7 +105,6 @@ const ContactPage = () => {
                 </Button>
               </Modal.Footer>
             </Modal>
-
             <></>
           </Form>
           <MapContainer />

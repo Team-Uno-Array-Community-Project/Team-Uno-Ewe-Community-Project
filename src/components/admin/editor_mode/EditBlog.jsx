@@ -3,6 +3,9 @@ import { Row, Col, Form, Button, Container } from "react-bootstrap";
 
 import SideMenuPanel from "../SideMenuPanel";
 
+// Function that allows Admins only to author new blog
+// posts. These posts will appear under the Blog portion
+// of the site, viewable by the public //
 const EditBlog = () => {
   const [blogPost, setBlogPost] = useState({
     title: "",
@@ -12,6 +15,8 @@ const EditBlog = () => {
     date: "",
   });
 
+  // Function that posts new blog information
+  // to the database via a fetch request //
   const handleSubmit = () => {
     fetch("http://localhost:3003/api/blog/post", {
       method: "POST",
@@ -40,6 +45,7 @@ const EditBlog = () => {
         </Col>
         <Container onSubmit={handleSubmit} className="edit-blog-container">
           <Col>
+            {/* Section for writing a blog title */}
             <Form.Group className="" controlId="exampleForm.ControlInput1">
               <Form.Label>Blog Post Title</Form.Label>
               <Form.Control
@@ -51,9 +57,10 @@ const EditBlog = () => {
                 placeholder="Enter Blog Post Title..."
               />
             </Form.Group>
+            {/* Section for writing the blog itself */}
             <Form.Group className="" controlId="exampleForm.ControlInput5">
               <Form.Label>Type Blog Text Here</Form.Label>
-              < br/>
+              <br />
               <textarea
                 onChange={(e) =>
                   setBlogPost({ ...blogPost, text: e.target.value })
@@ -64,7 +71,7 @@ const EditBlog = () => {
                 placeholder="Enter blog post..."
               />
             </Form.Group>
-
+            {/* Section for adding an image URL to accompany blog */}
             <Form.Group className="" controlId="exampleForm.ControlInput2">
               <Form.Label>Image URL</Form.Label>
               <Form.Control
@@ -76,6 +83,7 @@ const EditBlog = () => {
                 className="blog-input-window"
               />
             </Form.Group>
+            {/* Section for writing blog author name */}
             <Form.Group className="" controlId="exampleForm.ControlInput3">
               <Form.Label>Author Name</Form.Label>
               <Form.Control
@@ -87,6 +95,7 @@ const EditBlog = () => {
                 className="blog-input-window"
               />
             </Form.Group>
+            {/* Section for writing the date blog is posted */}
             <Form.Group className="" controlId="exampleForm.ControlInput4">
               <Form.Label>Posted Date</Form.Label>
               <Form.Control
