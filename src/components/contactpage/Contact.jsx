@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { Jumbotron, Form, Col, Row, Button } from "react-bootstrap";
 // import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
-// import ContactModal from "./ContactModal";
+import ContactModal from "./ContactModal";
 
 import MapContainer from "../googlemap/GoogleMap";
 
 const ContactPage = () => {
-  const [form, setForm] = useState({ email: "", topic: "", message: "" });
-  // const [description, setDescription] = useState("");
+  const [form, setForm] = useState({});
+
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // setDescription("");
     fetch("http://localhost:3003/api/contact/post", {
       method: "POST",
       headers: {
@@ -21,69 +19,26 @@ const ContactPage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setForm({});
-        console.log("Success:", data);
+        console.log("i am here");
+        e.target.reset();
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
 
-  // const [form, setForm] = useState({});;
-
-  // const handleSubmit = (e) => {
-  //   fetch("http://localhost:3003/api/contact/post", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(form),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // setForm({});
-  //       console.log("Success:", data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   fetch("http://localhost:3003/api/contact/post", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(form),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("Success:", data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     })
-  //     .finally(() => {
-  //       // Use this to wipe the form, regardless of success or failure.
-  //       setForm({});
-  //     });
-  // };
-
   return (
     <div className="contact-container">
       <Jumbotron className="knitting-image" />
-
       <Col>
         <Row>
-          <Form className="contact-form-container">
+          <Form className="contact-form-container" onSubmit={handleSubmit}>
             {/* section for email input */}
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>
                 <h3>email</h3>
               </Form.Label>
               <Form.Control
-                value={form.email}
                 type="text"
                 placeholder="name@example.com"
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -95,7 +50,6 @@ const ContactPage = () => {
                 <h3>Describe your topic</h3>
               </Form.Label>
               <Form.Control
-                value={form.topic}
                 className="form-options"
                 type="text"
                 placeholder="Enter topic"
@@ -108,23 +62,14 @@ const ContactPage = () => {
                 <h4>Write your message here</h4>
               </Form.Label>
               <Form.Control
-                value={form.message}
                 rows={3}
                 type="text"
                 placeholder="Write message..."
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </Form.Group>
-
-            <>
-              <Button
-                onClick={() => {
-                  handleSubmit();
-                }}
-              >
-                Send Message
-              </Button>
-            </>
+            <ContactModal />
+            <></>
           </Form>
           <MapContainer />
         </Row>
