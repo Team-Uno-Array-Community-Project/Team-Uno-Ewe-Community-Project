@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
@@ -18,6 +18,20 @@ import EditBlog from "./components/admin/editor_mode/EditBlog";
 import AdminDash from "./components/admin/AdminDash";
 
 function App() {
+  //Redirect visitor to Admin login by pressing and holding Esc Key on keyboard
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.keyCode === 27) {
+        window.location.replace("/admindash");
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
   return (
     <div className="app">
       <header>
@@ -27,17 +41,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/blog" component={BlogPage} />
-
           <Route path="/featured-products" component={VendorPage} />
-
           <Route path="/contact" component={ContactPage} />
           <Route path="/about" component={AboutPage} />
-
           <Route path="/admindash" component={AdminDash} />
-
           <Route path="/editstore" component={EditStore} />
           <Route path="/editblog" component={EditBlog} />
-
           <Route component={ErrorPage} />
         </Switch>
       </main>
