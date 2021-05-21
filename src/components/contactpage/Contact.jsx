@@ -10,23 +10,65 @@ const ContactPage = () => {
   const [form, setForm] = useState({ email: "", topic: "", message: "" });
   // const [description, setDescription] = useState("");
   const handleSubmit = (e) => {
-  // e.preventDefault();
-  // setDescription("");
-  fetch("http://localhost:3003/api/contact/post", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(form),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
+    // e.preventDefault();
+    // setDescription("");
+    fetch("http://localhost:3003/api/contact/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
     })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-  }
+      .then((response) => response.json())
+      .then((data) => {
+        setForm({});
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  // const [form, setForm] = useState({});;
+
+  // const handleSubmit = (e) => {
+  //   fetch("http://localhost:3003/api/contact/post", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(form),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // setForm({});
+  //       console.log("Success:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
+
+  // const handleSubmit = (e) => {
+  //   fetch("http://localhost:3003/api/contact/post", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(form),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     })
+  //     .finally(() => {
+  //       // Use this to wipe the form, regardless of success or failure.
+  //       setForm({});
+  //     });
+  // };
 
   return (
     <div className="contact-container">
@@ -41,7 +83,7 @@ const ContactPage = () => {
                 <h3>email</h3>
               </Form.Label>
               <Form.Control
-              // value={description}
+                value={form.email}
                 type="text"
                 placeholder="name@example.com"
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -53,7 +95,7 @@ const ContactPage = () => {
                 <h3>Describe your topic</h3>
               </Form.Label>
               <Form.Control
-              //  value={description}
+                value={form.topic}
                 className="form-options"
                 type="text"
                 placeholder="Enter topic"
@@ -66,7 +108,7 @@ const ContactPage = () => {
                 <h4>Write your message here</h4>
               </Form.Label>
               <Form.Control
-              //  value={description}
+                value={form.message}
                 rows={3}
                 type="text"
                 placeholder="Write message..."
