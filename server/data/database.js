@@ -1,7 +1,6 @@
 let mongoose = require('mongoose');
 
 const server = process.env.DB_CONNECTION;
-// `127.0.0.1:27017`;
 
 class Database {
     constructor() {
