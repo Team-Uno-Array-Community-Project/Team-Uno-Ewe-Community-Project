@@ -27,10 +27,6 @@ const BlogCards = (props) => {
           </div>
         </div>
       ))}
-      <p className="blog-cards-footer">
-        Stay up to date with the latest blog by signing up to our newsletter
-        below!
-      </p>
     </>
   );
 };
