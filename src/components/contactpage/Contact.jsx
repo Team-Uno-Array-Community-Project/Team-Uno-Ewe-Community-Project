@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Jumbotron, Form, Col, Row } from "react-bootstrap";
+import { Jumbotron, Form, Col, Row, Button, Modal } from "react-bootstrap";
 
 import MapContainer from "../googlemap/GoogleMap";
 
@@ -7,6 +7,10 @@ import MapContainer from "../googlemap/GoogleMap";
 // viewable on public site //
 const ContactPage = () => {
   const [form, setForm] = useState({});
+  const [show, setShow] = useState();
+  // sets the functions so that the message and pop up doesnt show until the event is fired
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   // Function that posts the Contact Form information
   // to the database as an object via a fetch request //
@@ -68,6 +72,39 @@ const ContactPage = () => {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </Form.Group>
+            <Button
+              type="submit"
+              variant="secondary"
+              className="button-contact-submit"
+              onClick={() => handleShow()}
+            >
+              Submit
+            </Button>
+            {/* Modal that indicates to user that the message has been sent upon submit */}
+            <Modal
+              className="modal-styling"
+              show={show}
+              onHide={() => handleClose()}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title className="modal-contact-title">
+                  Thanks for reaching out.
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body className="modal-contact-body">
+                Your message has been sent!
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  href="/contact"
+                  variant="secondary"
+                  className="button-contact-close"
+                  onClick={handleClose}
+                >
+                  close
+                </Button>
+              </Modal.Footer>
+            </Modal>
             <></>
           </Form>
           <MapContainer />
