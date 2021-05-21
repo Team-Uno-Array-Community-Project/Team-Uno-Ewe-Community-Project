@@ -12,11 +12,12 @@ function ContactModal() {
   return (
     <>
       <Button
+      type="submit"
         variant="secondary"
         className="button-contact-submit"
         onClick={() => handleShow()}
       >
-        Modal Button
+        Submit
       </Button>
 
       <Modal className="modal-styling" show={show} onHide={() => handleClose()}>
@@ -30,7 +31,7 @@ function ContactModal() {
         </Modal.Body>
         <Modal.Footer>
           <Button
-            href="/contactus"
+            href="/contact"
             variant="secondary"
             className="button-contact-close"
             onClick={handleClose}

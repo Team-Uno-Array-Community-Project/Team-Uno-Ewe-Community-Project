@@ -18,7 +18,7 @@ router.post('/post', (req, res) => {
         { email, topic, message });
     newItemDocument.save().then(document => {
         console.log(document);
-        res.status(200).send(`Congrats, new contact form added!`);
+        res.status(200).json(document);
     }).catch(err => {
         console.error(err);
         res.status(400).send(`Failed to add new contact form`);
