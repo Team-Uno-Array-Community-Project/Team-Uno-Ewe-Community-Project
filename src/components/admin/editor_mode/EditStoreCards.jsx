@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { CardGroup, Card, Row, Col, Form, Button } from "react-bootstrap";
+import {
+  CardGroup,
+  Card,
+  Row,
+  Col,
+  Form,
+  Button,
+  Container,
+} from "react-bootstrap";
 import { getImageFile } from "../../../assets/productImages";
 
 const EditStoreCards = (props) => {
@@ -29,42 +37,39 @@ const EditStoreCards = (props) => {
   };
 
   return (
-    <div>
-      <h2 className="store-title">
-        Show or Hide
-        <br />
-        Products
-      </h2>
+    <Container className="store-container">
+      <h2 className="store-title">Show or Hide Products</h2>
       <Row className="justify-content-md-center">
         {props.Products.map((val, index) => (
           <Col key={index} md="auto">
-            <CardGroup className="store-card">
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src={getImageFile(val.image)}
-                  style={{ width: "16em" }}
-                />
-                <Card.Footer>
-                  <p className="vendor-text">{val.vendor}</p>
-                  <p className="product-text">{val.description}</p>
-                  <small className="text-muted">{val.price}</small>
-                  <Form.Check
-                    defaultChecked={val.featured}
-                    onMouseDown={handleChecked}
-                    onMouseUp={() =>
-                      updateFeaturedStatus(featuredStatus, val._id)
-                    }
-                    aria-label="option 1"
+            
+              <CardGroup className="store-card">
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src={getImageFile(val.image)}
+                    style={{ width: "16em" }}
                   />
-                </Card.Footer>
-              </Card>
-            </CardGroup>
+                  <Card.Footer>
+                    <p className="vendor-text">{val.vendor}</p>
+                    <p className="product-text">{val.description}</p>
+                    <small className="text-muted">{val.price}</small>
+                    <Form.Check
+                      defaultChecked={val.featured}
+                      onMouseDown={handleChecked}
+                      onMouseUp={() =>
+                        updateFeaturedStatus(featuredStatus, val._id)
+                      }
+                      aria-label="option 1"
+                    />
+                  </Card.Footer>
+                </Card>
+              </CardGroup>
+            
           </Col>
         ))}
       </Row>
-      
-    </div>
+    </Container>
   );
 };
 
