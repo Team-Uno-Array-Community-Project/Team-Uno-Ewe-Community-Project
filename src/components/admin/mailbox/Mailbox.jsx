@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+
+// this is const becomes a "component" placed within the Mailbox const component below.
+// It then displays the selected message from list of contact messages
 
 const Message = (props) => {
   return (
     <div className="message-container">
       <h3 className="message-list-title">Message Selected</h3>
       <Card className="message-selected-card">
-        <Card.Header>{props.selectedMessage.topic}<br />{props.selectedMessage.email}</Card.Header>
+        <Card.Header>
+          {props.selectedMessage.topic}
+          <br />
+          {props.selectedMessage.email}
+        </Card.Header>
         <Card.Body>
           <p className="message-text">{props.selectedMessage.message}</p>
         </Card.Body>
@@ -15,12 +22,14 @@ const Message = (props) => {
   );
 };
 
+// This mailbox is fed contact form data from a fetch in AdminDash component to be displayed in list form.
+// The user can then click 'View More' to carry over data to the 'Message' const.
 const Mailbox = (props) => {
   const [messageSelected, setMessageSelected] = useState({});
   return (
     <>
       <div className="mailbox-container">
-      <h3 className="mailbox-list-title">Messages</h3>
+        <h3 className="mailbox-list-title">Messages</h3>
         {props.FormData.map((val, index) => (
           <Card className="message-preview-card">
             <Card.Header>
@@ -38,11 +47,8 @@ const Mailbox = (props) => {
           </Card>
         ))}
       </div>
-
-      <Message
-        
-        selectedMessage={messageSelected}
-      />
+      {/* the Message container rendered here accepts form data from above to display it in larger format */}
+      <Message selectedMessage={messageSelected} />
     </>
   );
 };
