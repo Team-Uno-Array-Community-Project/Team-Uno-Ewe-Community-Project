@@ -55,7 +55,7 @@ const AdminDash = () => {
         </Row>
       </Container>
     );
-  }
-;
+  };
+}
 
 export default AdminDash;
