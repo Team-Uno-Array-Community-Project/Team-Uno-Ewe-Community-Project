@@ -51,11 +51,11 @@ const AdminDash = () => {
           </Col>
           <Col sm={7} md={7} xl="auto">
           </Col>
-          {/* <EditStore /> */}
+          
         </Row>
       </Container>
     );
   }
-};
+;
 
 export default AdminDash;

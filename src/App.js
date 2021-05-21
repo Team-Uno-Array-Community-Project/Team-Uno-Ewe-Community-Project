@@ -73,7 +73,7 @@ function App() {
             path="/admindash/"
             render={(props) => <AdminDash MessageData={MessageData} {...props} />}
           /> */}
-          <Route path="/admindash/editstore" component={EditStore} />
+          <Route path="/editstore" component={EditStore} />
           <Route path="/editblog" component={EditBlog} />
 
           <Route component={ErrorPage} />
