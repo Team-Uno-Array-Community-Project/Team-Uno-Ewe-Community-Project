@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 let BlogModel = require('../model/blog.model');
 
+// Route that returns every blog from our database //
 router.get('/', (req, res) => {
-    
     BlogModel.find({}).then(document => {
         res.status(200).json(document);
     }).catch(err => {
@@ -11,11 +11,13 @@ router.get('/', (req, res) => {
     });
 });
 
+// Route that posts a new blog to our database //
 router.post('/post', (req, res) => {
     const { title, text, URL, author, date } = req.body;
 
     let newPostDocument = new BlogModel({
-        title, text, URL, author, date});
+        title, text, URL, author, date
+    });
     newPostDocument.save().then(document => {
         res.status(200).send(`Congrats, new post created!`);
     }).catch(err => {
@@ -24,6 +26,7 @@ router.post('/post', (req, res) => {
     });
 });
 
+// Route that deletes a blog from our database //
 router.delete('/', (req, res) => {
     const { deletePost } = req.body;
 

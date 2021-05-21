@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 let ContactFormModel = require('../model/contact-form.model');
 
+// Route that returns every contact form from our database //
 router.get('/', (req, res) => {
     ContactFormModel.find({}).then(document => {
         res.status(200).json(document);
@@ -10,6 +11,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// Route that posts a new contact form to our database //
 router.post('/post', (req, res) => {
     const { email, topic, message } = req.body;
 
@@ -24,6 +26,7 @@ router.post('/post', (req, res) => {
     });
 });
 
+// Route that deletes a contact form from our database //
 router.delete('/', (req, res) => {
     const { deleteItem } = req.body;
 

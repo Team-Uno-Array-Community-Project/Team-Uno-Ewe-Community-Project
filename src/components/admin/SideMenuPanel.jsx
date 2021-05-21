@@ -12,7 +12,11 @@ import {
 import "react-pro-sidebar/dist/css/styles.css";
 import { Envelope, Pencil, CurrencyDollar } from "react-bootstrap-icons";
 
-
+// Function that creates the Menu Panel for Admin view only.
+// This menu allows the admin to navigate through their inbox and messages
+// received from completed Contact Forms, and also, have editing permissions
+// 1) To change inventory displayed in Featured Products portion of public site
+// 2) To author new blog posts which will appear on public site.
 const SideMenuPanel = () => {
   return (
     <div>
