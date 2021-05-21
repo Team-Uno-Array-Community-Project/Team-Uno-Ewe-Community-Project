@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Jumbotron, Form, Col, Row, Button } from "react-bootstrap";
+import { Jumbotron, Form, Col, Row, Button, Modal } from "react-bootstrap";
 // import Contact_Hero from "../../assets/Contact_Hero.jpg";
-
-import ContactModal from "./ContactModal";
 
 import MapContainer from "../googlemap/GoogleMap";
 
 const ContactPage = () => {
   const [form, setForm] = useState({});
+  const [show, setShow] = useState();
+  // sets the functions so that the message and pop up doesnt show until the event is fired
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleSubmit = (e) => {
     fetch("http://localhost:3003/api/contact/post", {
@@ -68,7 +70,40 @@ const ContactPage = () => {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </Form.Group>
-            <ContactModal />
+            <Button
+              type="submit"
+              variant="secondary"
+              className="button-contact-submit"
+              onClick={() => handleShow()}
+            >
+              Submit
+            </Button>
+
+            <Modal
+              className="modal-styling"
+              show={show}
+              onHide={() => handleClose()}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title className="modal-contact-title">
+                  Thanks for reaching out.
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body className="modal-contact-body">
+                your message has been sent!
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  href="/contact"
+                  variant="secondary"
+                  className="button-contact-close"
+                  onClick={handleClose}
+                >
+                  close
+                </Button>
+              </Modal.Footer>
+            </Modal>
+
             <></>
           </Form>
           <MapContainer />
