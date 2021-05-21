@@ -39,7 +39,6 @@ const AdminDash = () => {
     return (
       <Container className="admindash-container">
         <Row>
-        <LogoutForm />
         </Row>
         <Row>
           <Col sm={2} md={2} xl={2}>
