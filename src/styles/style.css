@@ -774,6 +774,16 @@
   font-family: Lato;
 }
 
+.mailbox-btn {
+  width: 8rem;
+  margin-left: 65%;
+  margin-bottom: 5%;
+}
+
+.message-sender-email {
+  font-weight: 300;
+}
+
 .login-cont-size {
   width: 35em;
   height: 35em;
