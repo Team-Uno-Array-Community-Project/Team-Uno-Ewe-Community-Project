@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import SideMenuPanel from "./SideMenuPanel";
 
 // import Inbox from "./mailbox/Inbox";
-import EditStore from "./editor_mode/EditStore";
+// import EditStore from "./editor_mode/EditStore";
 // import InboxData from "./mailbox/InboxData";
 
 // import EditBlog from "./editor_mode/EditBlog";

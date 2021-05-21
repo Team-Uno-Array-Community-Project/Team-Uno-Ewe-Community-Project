@@ -116,7 +116,7 @@
   background-image: url(/src/assets/Contact_Hero.jpg);
   background-size: cover;
   height: 350px;
-  padding-bottom: 2%;
+  margin-bottom: 3%;
 }
 
 .contact-form-container {
@@ -124,12 +124,9 @@
   font-family: Baskerville;
   width: 300px;
   margin-top: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 6%;
   margin-left: 30%;
-}
-
-.map {
-  position: relative !important;
+  margin-right: 5%;
 }
 
 .home-container {
@@ -151,11 +148,6 @@
   text-align: center;
   margin: auto;
   padding-bottom: 2%;
-}
-
-.homepage-card-group {
-  margin: auto;
-  width: 70%;
 }
 
 .view-all-button {
@@ -672,25 +664,27 @@
   width: auto;
 }
 
-.image-upload-container {
-  border: .5rem;
-  border-color: #5c5c5c;
-  height: 20.25rem;
-  width: 20rem;
-  background-color: white;
-  margin-top: 10.3% !important;
+.store-title {
+  font-family: Baskerville;
+  color: #5c5c5c;
+  text-align: center;
+  margin: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.store-card {
+  padding-bottom: 10%;
+  font-family: Lato;
+}
+
+.edit-store-save-btn {
+  margin-bottom: 3%;
+  height: 3em;
 }
 
 .preview-button {
   margin-top: 5.8%;
-}
-
-.user-pill {
-  margin-top: 6.2%;
-}
-
-.title-container {
-  margin-left: 11.2%;
 }
 
 .hello-text {
