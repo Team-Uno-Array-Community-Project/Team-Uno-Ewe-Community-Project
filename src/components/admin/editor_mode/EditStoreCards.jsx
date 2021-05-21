@@ -5,11 +5,11 @@ import {
   Row,
   Col,
   Form,
-  Button,
   Container,
 } from "react-bootstrap";
 import { getImageFile } from "../../../assets/productImages";
 
+// This handles the functionality of the click features to display selected products on the VendorPage
 const EditStoreCards = (props) => {
   const handleChecked = (e) => {
     const { checked } = e.target;
@@ -17,7 +17,7 @@ const EditStoreCards = (props) => {
     setFeaturedStatus(!checked);
   };
   const [featuredStatus, setFeaturedStatus] = useState(true);
-
+// This is a patch request made through the Admin Dashboard to modify the featured data
   const updateFeaturedStatus = (featured, id) => {
     fetch("/api/item/patch", {
       method: "PATCH",
@@ -35,7 +35,7 @@ const EditStoreCards = (props) => {
         console.error(err);
       });
   };
-
+// This card maps through and displays all 27 items in the database for the Admin to select or deselect for display on the Vendor Page
   return (
     <Container className="store-container">
       <h2 className="store-title">Show or Hide Products</h2>

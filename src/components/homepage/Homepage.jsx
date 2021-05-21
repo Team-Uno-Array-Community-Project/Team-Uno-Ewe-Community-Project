@@ -3,6 +3,7 @@ import { Jumbotron, Button, Row, Container } from "react-bootstrap";
 import HomepageCards from "./HomepageCards";
 import { Link } from "react-router-dom";
 
+// The homepage uses a fetch request to display some of the featured products, returning information from the database
 const Homepage = () => {
   const [latestProducts, setLatestProducts] = useState([]);
   useEffect(() => {

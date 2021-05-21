@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import VendorProductCards from "./VendorProductCards";
 
-
+// This displays the VendorProductCards using a fetch request to the database
 const VendorPage = () => {
 const [featured, setFeatured] = useState([]);
 useEffect(() => {

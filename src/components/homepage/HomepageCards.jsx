@@ -6,7 +6,7 @@ import { getImageFile } from "../../assets/productImages";
 const HomepageCards = (props) => {
   const products = props.latestProducts.filter((product) => product.featured);
   const latestProducts = products.splice(0, 3);
-   
+  //  This card maps through the images from getImageFile and product data from the database
   return (
     <div>
       <h2 className="homepage-card-title">Latest New Products</h2>

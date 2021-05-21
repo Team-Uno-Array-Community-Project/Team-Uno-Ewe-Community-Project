@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import EditStoreCards from "./EditStoreCards";
 import SideMenuPanel from "../SideMenuPanel";
 
+// This is a fetch request to bring in data from the database to display on the Admin Dashboard
 const EditStore = () => {
   const [adminItems, setAdminItems] = useState([]);
   useEffect(() => {

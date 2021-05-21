@@ -2,10 +2,12 @@ import React from "react";
 import { CardGroup, Card, Row, Col } from "react-bootstrap";
 import { getImageFile } from "../../assets/productImages";
 
+// This filters through the featuredProducts that are selected from the Admin Dashboard
 const ProductCards = (props) => {
   const featuredProducts = props.ProductShown.filter(
     (product) => product.featured
   );
+  // These cards display data entered in database from a fetch request in the VendorPage
   return (
     <div>
       <div>
