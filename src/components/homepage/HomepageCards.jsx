@@ -16,11 +16,11 @@ const HomepageCards = (props) => {
             <CardGroup className="homepage-card-group">
               <Card>
                 <Link to="featured-products">
-                <Card.Img
-                  variant="top"
-                  src={getImageFile(val.image)}
-                  style={{ width: "20em" }}
-                />
+                  <Card.Img
+                    variant="top"
+                    src={getImageFile(val.image)}
+                    style={{ width: "20em" }}
+                  />
                 </Link>
                 <Card.Footer>
                   <p className="vendor-text">{val.vendor}</p>

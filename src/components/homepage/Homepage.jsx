@@ -20,7 +20,6 @@ const Homepage = () => {
   return (
     <Container className="home-container">
       <Jumbotron className="homepage-jumbotron" />
-
       <HomepageCards latestProducts={latestProducts} />
       <Row>
         <Link className="view-all-button" to="/featured-products">
