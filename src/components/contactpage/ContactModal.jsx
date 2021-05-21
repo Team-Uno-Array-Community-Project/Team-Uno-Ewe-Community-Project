@@ -16,7 +16,7 @@ function ContactModal() {
         className="button-contact-submit"
         onClick={() => handleShow()}
       >
-        submit
+        Modal Button
       </Button>
 
       <Modal className="modal-styling" show={show} onHide={() => handleClose()}>

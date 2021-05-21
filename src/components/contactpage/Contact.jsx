@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Jumbotron, Form, Col, Row, Button } from "react-bootstrap";
 // import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
-// import ContactModal from "./ContactModal";
+import ContactModal from "./ContactModal";
 
 import MapContainer from "../googlemap/GoogleMap";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ email: "", topic: "", message: "" });
-  // const [description, setDescription] = useState("");
+  const [show, setShow] = useState();
+  const handleShow = () => setShow(true);
+
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // setDescription("");
     fetch("http://localhost:3003/api/contact/post", {
       method: "POST",
       headers: {
@@ -28,26 +28,6 @@ const ContactPage = () => {
         console.error("Error:", error);
       });
   };
-
-  // const [form, setForm] = useState({});;
-
-  // const handleSubmit = (e) => {
-  //   fetch("http://localhost:3003/api/contact/post", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(form),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // setForm({});
-  //       console.log("Success:", data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  // };
 
   // const handleSubmit = (e) => {
   //   fetch("http://localhost:3003/api/contact/post", {
@@ -115,15 +95,17 @@ const ContactPage = () => {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </Form.Group>
-
+            <Button
+              onClick={() => {
+                handleSubmit();
+                handleShow();
+              }}
+              show={show}
+            >
+              Submit Button
+            </Button>
             <>
-              <Button
-                onClick={() => {
-                  handleSubmit();
-                }}
-              >
-                Send Message
-              </Button>
+              <ContactModal />
             </>
           </Form>
           <MapContainer />
