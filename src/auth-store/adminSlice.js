@@ -9,7 +9,6 @@ export const adminSlice = createSlice({
     reducers: {
         loginAdmin: (state, action) => {
             //login the admin after getting token from server
-            console.log(action.payload);
             state.admin = action.payload;
         },
         logoutAdmin: (state) => {
