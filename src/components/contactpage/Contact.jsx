@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Jumbotron, Form, Col, Row, Button } from "react-bootstrap";
-import Contact_Hero from "../../assets/Contact_Hero.jpg";
+// import Contact_Hero from "../../assets/Contact_Hero.jpg";
 
 // import ContactModal from "./ContactModal";
 

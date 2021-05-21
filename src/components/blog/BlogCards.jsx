@@ -9,7 +9,7 @@ const BlogCards = (props) => {
         <div>
           <div class="blog-card">
             <div class="meta">
-             <img class="photo" src={(val.URL)} style={{height: "250px"}} alt="blog subject" />
+             <img class="photo" src={(val.URL)} style={{height: "270px"}} alt="blog subject" />
               <ul class="details">
                 <li class="author">
                   <a href="/blog">{val.author}</a> 

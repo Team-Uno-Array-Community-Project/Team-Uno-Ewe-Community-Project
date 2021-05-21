@@ -14,6 +14,7 @@ useEffect(() => {
     console.error(err);
   });
 }, [])
+
   return (
     <div> 
       <VendorProductCards ProductShown={featured} />

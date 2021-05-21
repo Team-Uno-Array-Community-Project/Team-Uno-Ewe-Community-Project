@@ -116,7 +116,7 @@
   background-image: url(/src/assets/Contact_Hero.jpg);
   background-size: cover;
   height: 350px;
-  padding-bottom: 2%;
+  margin-bottom: 5%;
 }
 
 .contact-form-container {
@@ -124,8 +124,9 @@
   font-family: Baskerville;
   width: 300px;
   margin-top: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
   margin-left: 30%;
+  margin-right: 5%;
 }
 
 .map {
@@ -151,11 +152,6 @@
   text-align: center;
   margin: auto;
   padding-bottom: 2%;
-}
-
-.homepage-card-group {
-  margin: auto;
-  width: 70%;
 }
 
 .view-all-button {
@@ -240,18 +236,8 @@
 }
 
 /* Blog Page styling */
-* {
-  box-sizing: border-box;
-}
-
 .blog-container {
-  max-width: 1920px;
-  min-width: fit-content;
-  min-height: calc(100vh - 145px - 3rem);
-  height: fit-content;
-  justify-self: center;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 1%;
 }
 
 .blog-cards-title {
@@ -259,6 +245,13 @@
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.blog-product-card-group {
+  width: 10em;
+  padding-bottom: 10%;
+  float: none;
+  margin: 0 auto;
 }
 
 .blog-card {
@@ -490,8 +483,8 @@
   position: relative;
   height: 40rem;
   width: 15rem;
-  margin-top: 10%;
-  margin-left: 28%;
+  margin-top: 20%;
+  margin-left: 23%;
 }
 
 .ad-text-1 {
@@ -672,25 +665,27 @@
   width: auto;
 }
 
-.image-upload-container {
-  border: .5rem;
-  border-color: #5c5c5c;
-  height: 20.25rem;
-  width: 20rem;
-  background-color: white;
-  margin-top: 10.3% !important;
+.store-title {
+  font-family: Baskerville;
+  color: #5c5c5c;
+  text-align: center;
+  margin: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.store-card {
+  padding-bottom: 10%;
+  font-family: Lato;
+}
+
+.edit-store-save-btn {
+  margin-bottom: 3%;
+  height: 3em;
 }
 
 .preview-button {
   margin-top: 5.8%;
-}
-
-.user-pill {
-  margin-top: 6.2%;
-}
-
-.title-container {
-  margin-left: 11.2%;
 }
 
 .hello-text {

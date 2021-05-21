@@ -16,9 +16,6 @@ const getMessage = (msg) => {
   console.log(msg);
 };
 
-// import BackToTop from "../BackToTop/backtotop.js";
-
-//sets up props for the page
 const Footer = (props) => {
   const location = useLocation();
 
@@ -46,20 +43,33 @@ const Footer = (props) => {
 
             <Col className="footer-nav-margin">
               <Nav className="footer-nav-text">
-                
                 <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
             </Col>
           </Row>
           <div className="social-icons-container">
-              
-                <img src={facebookicon} alt="facebook logo social icon" className="social-icons"/>
-                <img src={instagramicon} alt="instagram logo social icon" className="social-icons"/>
-              
-                <img src={twittericon} alt="twitter logo social icon" className="social-icons"/>
-                <img src={pinteresticon} alt="pinterest logo social icon" className="social-icons"/>
-             
+            <img
+              src={facebookicon}
+              alt="facebook logo social icon"
+              className="social-icons"
+            />
+            <img
+              src={instagramicon}
+              alt="instagram logo social icon"
+              className="social-icons"
+            />
+
+            <img
+              src={twittericon}
+              alt="twitter logo social icon"
+              className="social-icons"
+            />
+            <img
+              src={pinteresticon}
+              alt="pinterest logo social icon"
+              className="social-icons"
+            />
           </div>
           <Form.Group controlId="formBasicEmail">
             <Form.Label className="form-label footer-form-label">
