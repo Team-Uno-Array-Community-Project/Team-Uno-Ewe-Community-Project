@@ -3,8 +3,9 @@ import { Jumbotron, Container, Col, Row } from "react-bootstrap";
 import SheepImage from "../../assets/SheepImage.png";
 import ChristmasImage from "../../assets/ChristmasImage.png";
 
-const Homepage = () => {
+const aboutPage = () => {
   return (
+    // component renders two rows, each containing one text box and one image at opposite ends //
     <Container className="about-container">
       <Jumbotron className="about-page-jumbotron"></Jumbotron>
       <h2 className="about-title">Our Story</h2>
@@ -90,4 +91,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default aboutPage;

@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// This component renders a button with popup window to start a would-be bot-chat.
+// The logic of this component has not been completed due to lack of free bot services.
+// !! This chat box is for cosmetics only as of now and is not functioning !!
+
 export const PopChat = (props) => {
   let hide = {
     display: "none",
@@ -49,6 +53,7 @@ export const PopChat = (props) => {
       </div>
       <div className="pop">
         <p>
+          {/* this image toggles the chat window open and close*/}
           <img
             onClick={toggle}
             src="https://i.pinimg.com/originals/7a/e3/25/7ae325d430d23638bf4d17da7dc6c965.png"

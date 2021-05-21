@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from "google-maps-react";
 
 // this class component is from the google-maps-react library.
-// The Google API is not react friendly so this is a hacky way of getting it to render here.
+// The Google API is not very friendly in relation to modern React code,
+// leading to the extends Component seen below
 
 export class MapContainer extends Component {
 
@@ -36,6 +37,6 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  //This API key is Vlad's personal API key and stored in the .env file at the root level
+  //This API key is Vlad's personal Google API key and stored in the .env file at the root level
   apiKey: process.env.REACT_APP_GOOGLE_MAPS_API__KEY,
 })(MapContainer);

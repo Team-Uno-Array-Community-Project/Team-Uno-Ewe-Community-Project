@@ -26,7 +26,7 @@ function BackToTop() {
     window.addEventListener("scroll", toggleVisibility);
   }, []);
 
-
+// renders a back-to-top button positioned left in footer. It fades when hovered over with cursor.
   return (
     <div className="btt-arrow" style={{ position: "relative", zIndex: "2" }}>
       {isVisible && (
