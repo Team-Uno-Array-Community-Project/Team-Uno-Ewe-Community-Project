@@ -11,7 +11,7 @@ function LogoutForm() {
     history.push("/");
   };
   return (
-    <Button size="lg" variant="dark" onClick={handleSubmit}>
+    <Button size="lg" variant="dark" className="logout-btn" onClick={handleSubmit}>
       Logout
     </Button>
   );

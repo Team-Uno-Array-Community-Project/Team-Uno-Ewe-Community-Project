@@ -20,42 +20,35 @@ const AdminDash = () => {
   let token = localStorage.getItem("token");
 
   const [form, setForm] = useState([]);
-    useEffect(() => {
-      fetch("/api/contact")
+  useEffect(() => {
+    fetch("/api/contact")
       .then((response) => response.json())
       .then((data) => {
-        setForm(data)
+        setForm(data);
         console.log("Success:", data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-    },
-    )
+  }, []);
 
   if (!token) {
     return <LoginForm />;
   } else {
     return (
       <Container className="admindash-container">
+        {/* <Row><LogoutForm /></Row> */}
         <Row>
-        <LogoutForm />
-        </Row>
-        <Row>
-          <Col sm={2} md={2} xl={2}>
+          <Col md="auto">
             <SideMenuPanel />
           </Col>
-          <Col sm={3} md={3} xl={3}>
-            <Mailbox FormData={form}
-            />
-          </Col>
-          <Col sm={7} md={7} xl="auto">
-          </Col>
+          
+            <Mailbox FormData={form} />
           
         </Row>
       </Container>
     );
-  };
-}
+  }
+};
 
 export default AdminDash;

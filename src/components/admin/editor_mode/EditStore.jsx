@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
+
 import EditStoreCards from "./EditStoreCards";
+import SideMenuPanel from "../SideMenuPanel";
 
 const EditStore = () => {
   const [adminItems, setAdminItems] = useState([]);
@@ -16,7 +19,14 @@ const EditStore = () => {
 
   return (
     <div className="edit-store-container">
-      <EditStoreCards Products={adminItems} />
+      <Row>
+        <Col xl={2}>
+          <SideMenuPanel />
+        </Col>
+        <Col xl={9}>
+          <EditStoreCards Products={adminItems} />
+        </Col>
+      </Row>
     </div>
   );
 };

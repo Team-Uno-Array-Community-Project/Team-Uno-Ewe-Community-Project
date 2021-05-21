@@ -665,6 +665,11 @@
   width: auto;
 }
 
+.store-container {
+  height: 800px;
+  overflow: auto;
+}
+
 .store-title {
   font-family: Baskerville;
   color: #5c5c5c;
@@ -725,5 +730,47 @@
   font-family: Baskerville;
   color: #5c5c5c;
   padding-left: 18%;
+}
+
+.mailbox-container {
+  font-family: Lato;
+  height: 800px;
+  width: 30%;
+  overflow: auto;
+  right: 40%;
+  padding: 1%;
+}
+
+.mailbox-previews {
+  padding: none;
+  min-width: 200px;
+  max-height: 800px;
+  overflow: auto;
+}
+
+.message-preview-body {
+  overflow: auto;
+  max-height: 10em;
+}
+
+.message-preview-card {
+  margin-top: 2%;
+}
+
+.message-container {
+  width: 40%;
+  right: 50%;
+  padding-left: 2%;
+  padding-top: 1%;
+}
+
+.message-selected-card {
+  width: 40em;
+  height: 30em;
+  overflow: auto;
+}
+
+.message-list-title {
+  font-family: Lato;
 }
 /*# sourceMappingURL=style.css.map */
