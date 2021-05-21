@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+
+// this is const becomes a "component" placed within the Mailbox const component below.
+// It then displays the selected message from list of contact messages
 
 const Message = (props) => {
   return (
@@ -19,6 +22,8 @@ const Message = (props) => {
   );
 };
 
+// This mailbox is fed contact form data from a fetch in AdminDash component to be displayed in list form.
+// The user can then click 'View More' to carry over data to the 'Message' const.
 const Mailbox = (props) => {
   const [messageSelected, setMessageSelected] = useState({});
   return (
@@ -45,7 +50,7 @@ const Mailbox = (props) => {
           </Card>
         ))}
       </div>
-
+      {/* the Message container rendered here accepts form data from above to display it in larger format */}
       <Message selectedMessage={messageSelected} />
     </>
   );
