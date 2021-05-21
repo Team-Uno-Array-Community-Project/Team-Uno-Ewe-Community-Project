@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Alert } from "react-bootstrap";
 import BlogCards from "./BlogCards";
 import BlogProductCards from "./BlogProductCards";
 // import HomepageCards from "./HomepageCards";
@@ -40,7 +40,11 @@ const Blogpage = () => {
         </Col>
         <Col xl={3}>
           <BlogProductCards latestProducts={latestProducts} />
-        </Col >
+        </Col>
+        <Alert variant="secondary" className="blog-cards-footer" style={{ width: "43.5rem", textAlign: "center"}}>
+          Stay up to date with the latest blog by signing up to our newsletter
+          below!
+        </Alert>
       </Row>
     </div>
   );
