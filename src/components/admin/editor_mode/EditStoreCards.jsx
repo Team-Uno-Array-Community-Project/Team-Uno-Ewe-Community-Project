@@ -1,53 +1,86 @@
-import React from "react";
-import {
-  Form,
-  Col,
-  Row,
-  Badge,
-  Card,
-  CardGroup,
-} from "react-bootstrap";
-import {getImageFile} from "../../../assets/productImages";
+import React, { useState } from "react";
+import { CardGroup, Card, Row, Col, Form, Button } from "react-bootstrap";
+import { getImageFile } from "../../../assets/productImages";
 
 const EditStoreCards = (props) => {
-    const adminItems = props.ProductShown.filter(product => product.adminItems);
-    return (
+  // const [numberFeatured, setNumberFeatured] = useState(0);
+  const handleChecked=(e) => {
+   
+    const {checked}=e.target;
+  
+    // !checked ? setNumberFeatured(numberFeatured+1) : setNumberFeatured(numberFeatured-1)
+    setFeaturedStatus(!checked)
+  }
+  const [featuredStatus, setFeaturedStatus] = useState(true);
 
+  const updateFeaturedStatus = (featured, id) => {
+   
+    fetch("/api/item/patch", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        _id: id,
+        newFeaturedStatus: featured
+      }),
+    })
+      .then((res) => res.json())
+      
+        
+      .catch((err) => {
+        console.error(err);
+      });
+    // console.log(`${vendor} is the vendor,status is ${featuredStatus}`);
+  };
 
-        <div>
-          <div>
-            <h2 className="homepage-card-title">Featured Products</h2>
-            <Row>
-              <Col>
-                <h2 className="admin-dash-title mr-auto">Edit Store</h2>
-              </Col>
-              <h3 className="hello-text">Hello,</h3>
-              <Col>
-                <Badge pill variant="secondary" className="user-pill mr-auto">
-                  Steven
-                </Badge>
-                
-              </Col>
-              {adminItems.map((val, index) => (
-                <Col key={index} xs={6} md={4}>
-                  <CardGroup className="vendorpage-card-group">
-                    <Card className="vendor-product-cards">
-                    <Card.Img variant="top" src={getImageFile(val.image)} />
-                      <Card.Footer>
-                        <p className="vendor-text">{val.vendor}</p>
-                        <p className="product-text">{val.product}</p>
-                        <small className="text-muted">{val.price}</small>
-                        <Form.Check aria-label="option 1" />
-                      </Card.Footer>
-                    </Card>
-                  </CardGroup>
-                </Col>
-              ))}
-            </Row>
-          </div>
-        </div>
-      );
-    };
-    
-    
-    export default EditStoreCards;
+// useEffect(() => {
+//   const featuredProducts = props.Products.filter(
+//     (product) => product.featured
+//   );
+//   setNumberFeatured(featuredProducts.length)
+// }, [props.Products])
+
+ 
+  return (
+    <div>
+      <div>
+        <h2 className="homepage-card-title">Featured Products</h2>
+        <Row>
+          {props.Products.map((val, index) => (
+            <Col key={index} xs={6} md={4}>
+              <CardGroup>
+                <Card>
+                  <Card.Img variant="top" src={getImageFile(val.image)} />
+                  <Card.Footer>
+                    <p className="vendor-text">{val.vendor}</p>
+                    <p className="product-text">{val.product}</p>
+                    <small className="text-muted">{val.price}</small>
+                    <Form.Check
+                    // disabled={!val.featured && numberFeatured >= 9}
+                    defaultChecked={val.featured}
+                    onMouseDown={handleChecked}
+                    onMouseUp={() => updateFeaturedStatus(featuredStatus, val._id)}
+                     
+                      aria-label="option 1"
+                    />
+                  </Card.Footer>
+                </Card>
+              </CardGroup>
+            </Col>
+          ))}
+        </Row>
+        <Button
+          onClick={() => {}}
+          variant="secondary"
+          size="lg"
+          active
+        >
+          Save and Update
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+export default EditStoreCards;

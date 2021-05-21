@@ -41,7 +41,7 @@ const AdminDash = (props) => {
           <Col sm={7} md={7} xl="auto">
             <Message />
           </Col>
-          {/* <EditStore /> */}
+          
         </Row>
       </Container>
     );

@@ -28,7 +28,7 @@ const SideMenuPanel = () => {
               </Link>
             </SubMenu>
             <SubMenu title="Store" icon={<CurrencyDollar />}>
-              <Link to="/admindash/editstore">
+              <Link to="/editstore">
                 <MenuItem>Edit Store</MenuItem>
               </Link>
             </SubMenu>
