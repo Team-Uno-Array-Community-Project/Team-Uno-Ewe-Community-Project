@@ -1,22 +1,13 @@
 /* Blog Page styling */
-* {
-  box-sizing: border-box;
-}
-
-.blog-container {
-  max-width: 1920px;
-  min-width: fit-content;
-  min-height: calc(100vh - 145px - 3rem);
-  height: fit-content;
-  justify-self: center;
-  margin-right: auto;
-  margin-left: auto;
-}
 
 $color_white: #fff;
 $color_prime: #cbe9d4;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
+
+.blog-container {
+  margin-left: 1%
+}
 
 .blog-cards-title {
   font-family: Baskerville;
@@ -24,6 +15,15 @@ $color_grey_dark: #a2a2a2;
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
+.blog-product-card-group {
+  width: 10em;
+  padding-bottom: 10%;
+  float: none;
+    margin: 0 auto;
+}
+
+// SCSS below is for center column blog posts
 
 .blog-card {
   display: flex;

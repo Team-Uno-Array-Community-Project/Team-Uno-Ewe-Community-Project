@@ -1,32 +1,32 @@
 import React from "react";
-import { CardGroup, Card, Container, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { CardGroup, Card, Col } from "react-bootstrap";
+import { getImageFile } from "../../assets/productImages";
 
-const BlogProductCards = (props) => {
+const BlogPageCards = (props) => {
+  const products = props.latestProducts.filter((product) => product.featured);
+  const latestProducts = products.splice(0, 3);
+
   return (
-    <Container className="blog-product-cards-container">
-      <h2 className="blog-product-cards-title">Featured Items</h2>
-      <Col>
-        {props.HomepageData.map((val, index) => (
-          <div key={val.id}>
-            <Col>
-              <CardGroup className="blog-product-cards">
-                <Col>
-                  <Card>
-                    <Card.Img variant="top" src={val.photo} />
-                    <Card.Footer>
-                      <p className="blog-vendor-text">{val.vendor}</p>
-                      <p className="blog-product-text">{val.product}</p>
-                      <small className="text-muted">{val.price}</small>
-                    </Card.Footer>
-                  </Card>
-                </Col>
-              </CardGroup>
-            </Col>
-          </div>
+    <div>
+      <h2 className="blog-cards-title">Latest Products</h2>
+        {latestProducts.map((val, index) => (
+          <Col key={index}>
+            <CardGroup className="blog-product-card-group">
+              <Card className="blog-product-card">
+                <Link to="featured-products">
+                  <Card.Img variant="top" src={getImageFile(val.image)} />
+                </Link>
+                <Card.Footer>
+                  <p className="vendor-text">{val.vendor}</p>
+                  <p className="product-text">{val.description}</p>
+                </Card.Footer>
+              </Card>
+            </CardGroup>
+          </Col>
         ))}
-      </Col>
-    </Container>
+    </div>
   );
 };
 
-export default BlogProductCards;
+export default BlogPageCards;

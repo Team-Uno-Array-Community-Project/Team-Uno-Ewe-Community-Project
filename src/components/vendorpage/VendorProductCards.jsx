@@ -1,23 +1,28 @@
 import React from "react";
 import { CardGroup, Card, Row, Col } from "react-bootstrap";
-import {getImageFile} from "../../assets/productImages";
+import { getImageFile } from "../../assets/productImages";
 
 const ProductCards = (props) => {
-  const featuredProducts = props.ProductShown.filter(product => product.featured);
+  const featuredProducts = props.ProductShown.filter(
+    (product) => product.featured
+  );
   return (
     <div>
       <div>
-        <h2 className="homepage-card-title">Featured Products</h2>
-        <Row>
+        <h2 className="store-title">Featured Products</h2>
+        <Row className="justify-content-md-center">
           {featuredProducts.map((val, index) => (
-            <Col key={index} xs={6} md={4}>
-              <CardGroup className="vendorpage-card-group">
-                <Card className="vendor-product-cards"
-                >
-                  <Card.Img variant="top" src={getImageFile(val.image)} />
+            <Col key={index} md="auto">
+              <CardGroup className="store-card">
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src={getImageFile(val.image)}
+                    style={{ width: "16em" }}
+                  />
                   <Card.Footer>
                     <p className="vendor-text">{val.vendor}</p>
-                    <p className="product-text">{val.product}</p>
+                    <p className="product-text">{val.description}</p>
                     <small className="text-muted">{val.price}</small>
                   </Card.Footer>
                 </Card>
