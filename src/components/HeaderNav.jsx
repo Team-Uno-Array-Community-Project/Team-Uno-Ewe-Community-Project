@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import { Navbar, Nav, Container, Image, Row, Col } from "react-bootstrap";
+import { Navbar, Nav, Container, Image, Row, Col, Button } from "react-bootstrap";
 
 import logo from "../assets/Ewe_Logo_Mint.png";
 import { render } from "@testing-library/react";
@@ -15,6 +15,12 @@ const Navigation = (props) => {
   const logoutButton = () => {
     if (token) {
       return <LogoutForm />
+    }
+  }
+  //takes the admin back to admin dashboard if they are in a public page, also only displays if a token is in local storage
+  const adminDashRoute = () => {
+    if (token) {
+      return <Button variant="info" href="/admindash"> Admin Dashboard</Button>
     }
   }
 
@@ -41,6 +47,8 @@ const Navigation = (props) => {
       >
         <Nav className="nav-links">
           
+          {adminDashRoute()}
+
           <Nav.Link href="/featured-products">Featured Products</Nav.Link>
           <Nav.Link href="/blog">Blog</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
