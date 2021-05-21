@@ -1,37 +1,48 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import BlogCards from "./BlogCards";
 import BlogProductCards from "./BlogProductCards";
-import Ad from "./Ad";
-import HomepageData from "../homepage/HomepageData";
+// import HomepageCards from "./HomepageCards";
 
+import Ad from "./Ad";
 
 const Blogpage = () => {
   const [posts, setPosts] = useState([]);
-useEffect(() => {
-  fetch("/api/blog/")
-  .then(res => res.json())
-  .then(data => {
-    setPosts(data);
-  })
-  .catch(err => {
-    console.error(err);
-  });
-}, [])
+  const [latestProducts, setLatestProducts] = useState([]);
+  useEffect(() => {
+    fetch("/api/blog/")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    fetch("/api/item/")
+      .then((res) => res.json())
+      .then((data) => {
+        setLatestProducts(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   return (
-    <section className="blog-container">
-      <Row>
-        <Col>
+    <div className="blog-container">
+      <Row className="justify-content-md-center">
+        <Col xl={3}>
           <Ad />
         </Col>
-        <Col>
-        <BlogCards BlogCardData={posts} />
+        <Col xl={6}>
+          <BlogCards BlogCardData={posts} />
         </Col>
-        <Col>
-        <BlogProductCards HomepageData={HomepageData} />
-        </Col>
+        <Col xl={3}>
+          <BlogProductCards latestProducts={latestProducts} />
+        </Col >
       </Row>
-    </section>
+    </div>
   );
 };
 export default Blogpage;

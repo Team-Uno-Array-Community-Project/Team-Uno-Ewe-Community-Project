@@ -33,12 +33,12 @@ const EditStoreCards = (props) => {
       <h2 className="store-title">
         Show or Hide
         <br />
-        Featured Products
+        Products
       </h2>
       <Row className="justify-content-md-center">
         {props.Products.map((val, index) => (
           <Col key={index} md="auto">
-            <CardGroup className="edit-store-card">
+            <CardGroup className="store-card">
               <Card>
                 <Card.Img
                   variant="top"
@@ -63,17 +63,7 @@ const EditStoreCards = (props) => {
           </Col>
         ))}
       </Row>
-      <Row className="justify-content-md-center">
-        <Button
-          className="edit-store-save-btn"
-          onClick={() => {}}
-          variant="secondary"
-          size="lg"
-          active
-        >
-          Save and Update
-        </Button>
-      </Row>
+      
     </div>
   );
 };
