@@ -16,7 +16,6 @@ function verifyToken(token) {
 }
 
 function createToken(payload) {
-    console.log(payload);
     return jwt.sign(payload, process.env.TOKEN_KEY);
 }
 

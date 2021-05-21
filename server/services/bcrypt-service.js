@@ -8,7 +8,6 @@ function hashPassword(payload) {
 }
 
 function checkPassword(payload, hashedPassword) {
-    console.log(payload, hashedPassword);
     return bcrypt.compare(payload, hashedPassword);
 }
 
