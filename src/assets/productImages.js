@@ -1,3 +1,4 @@
+// This converts the .jpeg images to .jpg images to coincide with data entered into database
 import coastal from "./coastal.jpeg";
 import pishkun from "./pishkun.jpeg";
 import bamboofiber from "./bamboofiber.jpeg";
